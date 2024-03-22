@@ -1,0 +1,39 @@
+.services .content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  margin: 40px 0;
+}
+
+.services .content .serviceBox {
+  border: var(--border);
+  padding: 50px 20px;
+  display: flex;
+  background: var(--backgroundColorPRincipal);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.services .content .serviceBox img {
+  max-height: 200px;
+}
+
+.services .content .serviceBox img.small {
+  max-height: 300px;
+}
+
+.services .content .serviceBox h2 {
+  font-size: 1.1em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--letrasTitulosColor);
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.services .content .serviceBox p {
+  text-align: center;
+}

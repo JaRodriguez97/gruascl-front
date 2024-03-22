@@ -1,0 +1,21 @@
+.nosotros .content {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  gap: 40px;
+  align-items: center;
+}
+
+.nosotros .content .textBox {
+  width: 40%;
+  min-width: 40%;
+}
+
+.nosotros .content .imgBx {
+  max-width: 400px;
+}
+
+.nosotros .content .imgBx img {
+  max-width: 100%;
+  border-radius: 50%;
+}

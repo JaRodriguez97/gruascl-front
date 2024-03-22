@@ -1,0 +1,160 @@
+section {
+  padding: 100px 30px;
+}
+
+.banner {
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  justify-content: space-between;
+  background: var(--backgroundColorPrincipal);
+}
+
+.banner.active {
+  left: 10%;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.banner .imgBx {
+  position: relative;
+  min-width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.banner .content {
+  max-width: 700px;
+  margin-left: 40px;
+  gap: 20px;
+  display: grid;
+}
+
+.banner .content .btnBox {
+  width: max-content;
+  display: flex;
+  gap: 15px;
+}
+
+.banner .content .btnBox .btn2 {
+  background: #fff;
+}
+
+.banner .content h2 {
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--letrasTitulosColor);
+  line-height: 2.5em;
+  margin: 0;
+}
+
+.banner .content h2 span {
+  font-weight: 700;
+  color: var(--colorPrincipal);
+  font-size: 1.5em;
+}
+
+.banner .content p {
+  color: var(--letrasParrafosColor);
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sci {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sci li {
+  list-style: none;
+}
+
+.sci li a {
+  position: relative;
+  display: inline-block;
+}
+
+.sci li a fa-icon {
+  color: var(--letrasTitulosColor);
+  font-size: 1.8rem;
+}
+
+.sci li a fa-icon:hover {
+  color: var(--colorPrincipal);
+}
+
+.copyrightText {
+  font-weight: 500;
+  color: var(--letrasPocoColor);
+  letter-spacing: 1px;
+}
+
+.copyrightText a {
+  font-weight: 600;
+  color: var(--colorPrincipal);
+  letter-spacing: 1.1px;
+  text-decoration: none;
+}
+
+/* responsive */
+
+@media (max-width: 991px) {
+  .banner {
+    flex-direction: column;
+    padding: 40px;
+    justify-content: center;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  footer {
+    padding: 20px 40px;
+  }
+
+  .banner .imgBx {
+    width: 300px;
+    min-width: 300px;
+    height: 300px;
+    margin-top: 100px;
+  }
+
+  .banner .content {
+    margin-bottom: 100px;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .banner .content h2 {
+    line-height: 1.5em;
+  }
+
+  .banner .content h2 span {
+    font-size: 1.5em;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
