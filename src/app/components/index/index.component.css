@@ -26,8 +26,8 @@ section {
 
 .banner .imgBx {
   position: relative;
-  min-width: 500px;
-  height: 500px;
+  min-width: 50%;
+  height: 100%;
   overflow: hidden;
 }
 
