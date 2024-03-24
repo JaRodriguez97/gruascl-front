@@ -73,10 +73,6 @@
   color: var(--letrasParrafosColor);
 }
 
-.container .contactInfo .box .text address:nth-child(3) {
-  font-size: 1vw;
-}
-
 .contactForm {
   width: 40%;
   padding: 40px;
