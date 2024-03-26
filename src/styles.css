@@ -127,6 +127,11 @@ mat-progress-bar {
 
 p {
   color: var(--letrasParrafosColor);
+  text-wrap: pretty;
+}
+
+span {
+  color: var(--colorPrincipal);
 }
 
 .title {

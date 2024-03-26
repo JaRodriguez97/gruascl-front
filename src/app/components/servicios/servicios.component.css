@@ -17,6 +17,7 @@
 
 .services .content .serviceBox img {
   max-height: 200px;
+  max-width: 20vw;
 }
 
 .services .content .serviceBox img.small {
