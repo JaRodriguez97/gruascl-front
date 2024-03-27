@@ -54,6 +54,10 @@
   font-size: 22px;
   background: var(--backgroundColorSecundario);
   /* filter: invert(1); */
+
+  fa-icon {
+    color: var(--colorPrincipal);
+  }
 }
 
 .container .contactInfo .box .text {
