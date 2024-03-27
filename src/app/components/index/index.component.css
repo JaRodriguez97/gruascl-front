@@ -123,13 +123,16 @@ footer {
   .banner {
     flex-direction: column;
     padding: 40px;
-    justify-content: center;
+    /* justify-content: center;
     min-height: 100vh;
-    height: auto;
+    height: auto; */
   }
 
   footer {
     padding: 20px 40px;
+    p {
+      font-size: 0.77em;
+    }
   }
 
   .banner .imgBx {

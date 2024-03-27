@@ -3,25 +3,28 @@
   padding: 50px 100px;
   align-items: flex-start;
   flex-direction: column;
-  /* background-image: url("../../../assets/images/bg.jpg"); */
+  background-image: url("../../../assets/images/bg.jpg");
   background-size: cover;
   width: 100%;
+  color: var(--letrasSinContrasteColor);
 }
 
 .contact .content {
   max-width: 800px;
   text-align: left;
+  padding-top: 80px;
   margin-left: 4em;
 }
 
 .contact .content h2 {
   font-size: 36px;
   font-weight: 500;
-  color: var(--letrasTitulosColor);
+  /* color: var(--letrasTitulosColor); */
 }
 
 .contact .content p {
   font-weight: 300;
+  color: inherit;
 }
 
 .container {
@@ -73,9 +76,9 @@
   color: var(--colorPrincipal);
 }
 
-.container .contactInfo .box .text address {
+/* .container .contactInfo .box .text address {
   color: var(--letrasParrafosColor);
-}
+} */
 
 .contactForm {
   width: 40%;
@@ -98,7 +101,7 @@
 .contactForm .inputBox input,
 .contactForm .inputBox textarea {
   width: 100%;
-  padding: 5px 0;
+  padding: 5px;
   font-size: 16px;
   margin: 10px 0;
   border: none;
@@ -110,7 +113,7 @@
 .contactForm .inputBox span {
   position: absolute;
   left: 0;
-  padding: 5px 0;
+  padding: 5px;
   font-size: 16px;
   margin: 10px 0;
   pointer-events: none;
@@ -162,14 +165,7 @@
   .contact .content {
     margin-left: 0;
   }
-
-  .container .contactInfo .box .text address {
-    font-size: 2.8vw;
-  }
 }
 
 @media (max-width: 570px) {
-  .container .contactInfo .box .text address {
-    font-size: 2.4vw;
-  }
 }

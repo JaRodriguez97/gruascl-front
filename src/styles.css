@@ -253,13 +253,13 @@ p {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  .services .content .serviceBox img {
+  /* .services .content .serviceBox img {
     max-height: 100px !important;
   }
 
   .services .content .serviceBox img.small {
     max-height: 150px !important;
-  }
+  } */
 
   .project .content {
     grid-template-columns: repeat(2, 1fr) !important;

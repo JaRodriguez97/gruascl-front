@@ -74,7 +74,7 @@ header.sticky ul li a:hover {
 
 .boxBtn {
   position: fixed;
-  top: 15vh;
+  top: 10vh;
   right: 0;
   height: 100px;
   z-index: 1;
@@ -157,19 +157,15 @@ header.sticky ul li a:hover {
   .toggle {
     width: 40px;
     height: 40px;
-    /* background-image: url("../../../assets/images/menu.png"); */
+    background-image: url("../../../assets/images/menu.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 30px;
-    cursor: pointer;
+    background-color: var(--colorPrincipal);
   }
 
   .toggle.active {
-    /* background-image: url("../../../assets/images/close.png"); */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 25px;
-    cursor: pointer;
+    background-image: url("../../../assets/images/close.png");
   }
 }
 
