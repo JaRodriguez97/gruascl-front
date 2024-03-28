@@ -20,6 +20,7 @@ export class ContactanosComponent implements OnInit {
   faPhone = faPhone;
   faMapMarked = faMapMarked;
   faEnvelope = faEnvelope;
+  textButton: string = 'Enviar';
 
   constructor(
     private contactService: ContactService,
@@ -36,8 +37,19 @@ export class ContactanosComponent implements OnInit {
     });
   }
 
-  async sendContactMail({ value }: FormGroup): Promise<any> {
+  async sendContactMail(form: FormGroup): Promise<any> {
     // this.publicService.show();
+
+    if (this.textButton == 'Cargando...')
+      return Swal.fire({
+        icon: 'warning',
+        html: '<span>Por favor espere que se envie el anterior mensaje</span>',
+        scrollbarPadding: false,
+      });
+
+    this.textButton = 'Cargando...';
+
+    let { value } = form;
 
     let { nombreCompleto, email, mensaje } = value;
 
@@ -46,7 +58,7 @@ export class ContactanosComponent implements OnInit {
         icon: 'warning',
         html: '<span>Por favor diligencie los campos obligatorios para poder enviar el mensaje</span>',
         scrollbarPadding: false,
-      });
+      }).then(() => (this.textButton = 'Enviar'));
     // .then(() => this.publicService.hide());
 
     this.contactService.sendMesage(value).subscribe({
@@ -57,7 +69,7 @@ export class ContactanosComponent implements OnInit {
           title: res.message,
           html: '<span>Prontamente uno de nuestros operadores le contactará</span>',
           // scrollbarPadding: false,
-        });
+        }).then(() => form.reset());
       },
       error: (err) => {
         console.error(err);
@@ -93,10 +105,9 @@ export class ContactanosComponent implements OnInit {
             Usar app email
           </a>
           `,
-        });
-        // .then(() => this.publicService.hide());
+        }).then(() => (this.textButton = 'Enviar'));
       },
-      // complete: () => this.publicService.hide(),
+      complete: () => (this.textButton = 'Enviar'),
     });
   }
 }
