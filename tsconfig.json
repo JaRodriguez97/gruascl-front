@@ -9,7 +9,7 @@
       "@components/*": ["src/app/components/*"],
       "@env/*": ["src/environments/*"],
       "@interfaces/*": ["src/app/interfaces/*"],
-      "@models/*": ["src/app/interfaces/*"],
+      "@models/*": ["src/app/models/*"],
       "@modules/*": ["src/app/modules/*"],
       "@services/*": ["src/app/services/*"]
     },
