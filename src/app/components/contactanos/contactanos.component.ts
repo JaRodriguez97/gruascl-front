@@ -67,7 +67,7 @@ export class ContactanosComponent implements OnInit {
         Swal.fire({
           icon: 'success',
           title: res.message,
-          html: '<span>Prontamente uno de nuestros operadores le contactará</span>',
+          html: '<span>Prontamente un operador le contactará</span>',
           // scrollbarPadding: false,
         }).then(() => form.reset());
       },

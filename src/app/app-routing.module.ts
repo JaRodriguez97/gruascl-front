@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -7,9 +8,9 @@ const routes: Routes = [
     path: 'landing',
     loadChildren: () =>
       import('./modules/Landing/landing.module').then((m) => m.LandingModule),
-    title: 'Servicio de Grúa | Grúas CL',
+    title: 'Servicio Grúa Cali Economicas 24 Horas | Grúas CL',
   },
-  // { path: '**', component: NotFoundComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
