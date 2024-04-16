@@ -53,7 +53,7 @@
   cursor: pointer;
 }
 
-.project .content .workBx .textBx h3 {
-  color: var(--letrasSinContrasteColor);
+.project .content .workBx .textBx span {
+  /* color: var(--letrasSinContrasteColor); */
   font-size: 1em;
 }
