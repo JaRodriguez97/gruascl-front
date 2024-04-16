@@ -7,7 +7,7 @@ const routes: Routes = [
     path: 'landing',
     loadChildren: () =>
       import('./modules/Landing/landing.module').then((m) => m.LandingModule),
-    title: 'Servicio de Grúa | GruasCL',
+    title: 'Servicio de Grúa | Grúas CL',
   },
   // { path: '**', component: NotFoundComponent },
 ];

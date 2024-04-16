@@ -70,7 +70,7 @@
   font-size: 16px;
 }
 
-.container .contactInfo .box .text h3 {
+.container .contactInfo .box .text h4 {
   font-weight: 500;
   color: var(--colorPrincipal);
 }
@@ -85,7 +85,7 @@
   background: var(--backgroundColorSecundario);
 }
 
-.contactForm h2 {
+.contactForm h3 {
   font-size: 30px;
   color: var(--letrasSinContrasteColor);
   font-weight: 500;
