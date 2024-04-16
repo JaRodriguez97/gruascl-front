@@ -8,7 +8,7 @@ const routes: Routes = [
     path: 'landing',
     loadChildren: () =>
       import('./modules/Landing/landing.module').then((m) => m.LandingModule),
-    title: 'Servicio Grúa Cali Economicas 24 Horas | Grúas CL',
+    title: 'Servicio Grúa Cali Economicas 24 Horas - Grúas CL',
   },
   { path: '**', component: NotFoundComponent },
 ];
