@@ -7,4 +7,4 @@ Allow: /landing#trabajos
 Allow: /landing#testimonios
 Allow: /landing#contacto
 
-sitemap: https://gngcali.com/sitemap.xml
+sitemap: https://gruascl.com/sitemap.xml

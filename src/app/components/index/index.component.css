@@ -51,8 +51,7 @@ section {
 .banner .content h1 {
   font-weight: 500;
   letter-spacing: 1px;
-  color: var(--letrasTitulosColor);
-  line-height: 2.5em;
+  color: var(--letrasTitulosColor); 
   margin: 0;
 }
 
