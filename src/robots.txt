@@ -1,4 +1,4 @@
 User-Agent: *
-Allow: /landing
+Allow: /servicio-grua-cali-economicas-24-horas
 
 sitemap: https://gruascl.com/sitemap.xml
