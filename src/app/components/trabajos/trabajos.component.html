@@ -5,123 +5,15 @@
       Contamos con un extenso historial en proyectos exitosos llevados a cabo.
     </p>
   </div>
-  <div class="content">
-    <div class="workBx">
+
+  <ul *ngIf="trabajos.length">
+    <li *ngFor="let t of trabajos">
       <div class="imgBx">
-        <img
-          src="../../../assets/trabajosImg/img1.jpg"
-          alt="img1 - Servicio grúa"
-          title="img1 - Servicio grúa"
-          loading="lazy"
-        />
+        <img [src]="t.src" [alt]="t.alt" [title]="t.title" loading="lazy" />
       </div>
       <div class="textBx">
-        <span>Proyecto 01</span>
+        <span>{{ t.text }}</span>
       </div>
-    </div>
-    <div class="workBx">
-      <div class="imgBx">
-        <img
-          src="../../../assets/trabajosImg/img2.jpg"
-          alt="img2 - Servicio grúa"
-          title="img2 - Servicio grúa"
-          loading="lazy"
-        />
-      </div>
-      <div class="textBx">
-        <span>Proyecto 02</span>
-      </div>
-    </div>
-    <div class="workBx">
-      <div class="imgBx">
-        <img
-          src="../../../assets/trabajosImg/img3.jpg"
-          alt="img3 - Servicio grúa"
-          title="img3 - Servicio grúa"
-          loading="lazy"
-        />
-      </div>
-      <div class="textBx">
-        <span>Proyecto 03</span>
-      </div>
-    </div>
-    <div class="workBx">
-      <div class="imgBx">
-        <img
-          src="../../../assets/trabajosImg/img4.jpg"
-          alt="img4 - Servicio grúa"
-          title="img4 - Servicio grúa"
-          loading="lazy"
-        />
-      </div>
-      <div class="textBx">
-        <span>Proyecto 04</span>
-      </div>
-    </div>
-    <div class="workBx">
-      <div class="imgBx">
-        <img
-          src="../../../assets/trabajosImg/img5.jpg"
-          alt="img5 - Servicio grúa"
-          title="img5 - Servicio grúa"
-          loading="lazy"
-        />
-      </div>
-      <div class="textBx">
-        <span>Proyecto 05</span>
-      </div>
-    </div>
-    <div class="workBx">
-      <div class="imgBx">
-        <img
-          src="../../../assets/trabajosImg/img6.jpg"
-          alt="img6 - Servicio grúa"
-          title="img6 - Servicio grúa"
-          loading="lazy"
-        />
-      </div>
-      <div class="textBx">
-        <span>Proyecto 06</span>
-      </div>
-    </div>
-    <div class="workBx">
-      <div class="imgBx">
-        <img
-          src="../../../assets/trabajosImg/img7.jpg"
-          alt="img7 - Servicio grúa"
-          title="img7 - Servicio grúa"
-          loading="lazy"
-        />
-      </div>
-      <div class="textBx">
-        <span>Proyecto 07</span>
-      </div>
-    </div>
-    <div class="workBx">
-      <div class="imgBx">
-        <img
-          src="../../../assets/trabajosImg/img8.jpg"
-          alt="img8 - Servicio grúa"
-          title="img8 - Servicio grúa"
-          loading="lazy"
-        />
-      </div>
-      <div class="textBx">
-        <span>Proyecto 08</span>
-      </div>
-    </div>
-    <div class="workBx">
-      <div class="imgBx">
-        <img
-          src="../../../assets/trabajosImg/img9.jpg"
-          alt="img9 - Servicio grúa"
-          title="img9 - Servicio grúa"
-          loading="lazy"
-        />
-      </div>
-      <div class="textBx">
-        <span>Proyecto 09</span>
-      </div>
-    </div>
-  </div>
+    </li>
+  </ul>
 </section>

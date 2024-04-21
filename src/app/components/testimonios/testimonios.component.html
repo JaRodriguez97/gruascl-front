@@ -5,44 +5,15 @@
       Presentamos algunas reacciones que nuestros clientes increiblemente dan.
     </p>
   </div>
-  <ul class="content">
-    <li class="testimonialsBox">
-      <p>
-        Desde el momento en que llamé a su línea para emergencia, hasta que mi
-        vehículo fue entregado al taller, quedé impresionado por la rapidez y
-        profesionalismo demostrado por el equipo <span>Grúas CL.</span> Su
-        respuesta fue inmediata, y en cuestión de minutos, la grúa llegó al
-        lugar del incidente.
-      </p>
-      <h4>
-        Juan Ramírez<br />
-        <span>Empresario</span>
-      </h4>
+
+  <ul *ngIf="testimonios.length">
+    <li *ngFor="let t of testimonios">
+      <p [innerHTML]="t.parrafo"></p>
+      <h3>
+        {{ t.nombre }}
+        <br />
+        <span>{{ t.profesion }}</span>
+      </h3>
     </li>
-    <li class="testimonialsBox">
-      <p>
-        El equipo <span>Grúas CL</span> llegó al lugar en cuestión de
-        minutos, equipado con la grúa adecuada para manejar nuestro vehículo de
-        carga pesada. Lo que más me impresionó fue su capacidad para coordinar
-        el rescate eficientemente, manteniendo la seguridad de todos los
-        involucrados y minimizando cualquier riesgo además de lo económicas.
-      </p>
-      <h4>
-        María López<br />
-        <span>Directora Contable</span>
-      </h4>
-    </li>
-    <div class="testimonialsBox">
-      <p>
-        <span>Grùas CL</span> es simplemente fenomenal. Mi camión se averió en
-        medio de una entrega urgente, y su equipo llegó al rescate sin demora.
-        Su profesionalismo y eficiencia hicieron toda la diferencia. ¡Recomiendo
-        encarecidamente sus servicios a todos los conductores!
-      </p>
-      <h4>
-        Sofía García<br />
-        <span>Ingeniera Industrial</span>
-      </h4>
-    </div>
   </ul>
 </section>

@@ -6,90 +6,12 @@
       extienden desde esta ubicación hasta alcanzar cobertura a nivel nacional.
     </p>
   </div>
-  <ul class="content">
-    <li class="serviceBox">
-      <img
-        src="../../../assets/servicioImg/servicio01.webp"
-        alt="servicio01 - Servicio grúa"
-        title="servicio01 - Servicio grúa"
-        loading="lazy"
-      />
-      <h3>Servicios Livianos</h3>
-      <p>
-        Disponemos maquinaria de calidad y ofrecemos los precios más
-        competitivos para brindar una asistencia responsable y eficiente en
-        todos los servicios solicitados.
-      </p>
-    </li>
-    <li class="serviceBox">
-      <img
-        src="../../../assets/servicioImg/servicio02.webp"
-        alt="servicio02 - Servicio grúa"
-        title="servicio02 - Servicio grúa"
-        loading="lazy"
-      />
-      <h3>Servicios medianos</h3>
-      <p>
-        Nuestros técnicos altamente capacitados y cualificados están disponibles
-        para proporcionarte la experiencia en seguridad y responsabilidad que
-        solo <span>Grúas CL.</span> puede ofrecer.
-      </p>
-    </li>
-    <li class="serviceBox">
-      <img
-        src="../../../assets/servicioImg/servicio03.jpg"
-        alt="servicio03 - Servicio grúa"
-        title="servicio03 - Servicio grúa"
-        loading="lazy"
-      />
-      <h3>Servicios grandes</h3>
-      <p>
-        Nuestra posición líder en el mercado se debe a nuestra constante
-        responsabilidad y compromiso con la satisfacción de nuestros clientes.
-      </p>
-    </li>
-    <li class="serviceBox">
-      <img
-        src="../../../assets/servicioImg/servicio04.jpg"
-        alt="servicio04 - Servicio grúa"
-        title="servicio04 - Servicio grúa"
-        loading="lazy"
-      />
-      <h3>Servicio para maquinaria</h3>
-      <p>
-        Somos aliados de tu tiempo y tú economía. En <span>Grúas CL</span>,
-        aseguramos el transporte para su maquinaria sin contratiempos. Logrando
-        tiempos en entrega increibles además del gran servicio con maquinas
-        pesadas.
-      </p>
-    </li>
-    <li class="serviceBox">
-      <img
-        src="../../../assets/servicioImg/servicio05.jpg"
-        alt="servicio05 - Servicio grúa"
-        title="servicio05 - Servicio grúa"
-        loading="lazy"
-      />
-      <h3>Servicio grúa telescópica</h3>
-      <p>
-        Disponemos con una extensa variedad de maquinaria económica a tu
-        disposición, lista para ofrecerte soluciones oportunas y precisas que se
-        adapten a tus necesidades específicas.
-      </p>
-    </li>
-    <li class="serviceBox">
-      <img
-        src="../../../assets/servicioImg/servicio06.jpg"
-        alt="servicio06 - Servicio grúa"
-        title="servicio06 - Servicio grúa"
-        loading="lazy"
-      />
-      <h3>Servicio rescate</h3>
-      <p>
-        En nuestro equipo, contamos con profesionales altamente capacitados y la
-        maquinaria especializada necesaria para abordar con éxito cualquier
-        situación de rescate que se presente.
-      </p>
+
+  <ul *ngIf="servicios.length">
+    <li *ngFor="let s of servicios">
+      <img [src]="s.src" [alt]="s.alt" [title]="s.title" loading="lazy" />
+      <h3>{{ s.titulo }}</h3>
+      <p [innerHTML]="s.parrafo"></p>
     </li>
   </ul>
 </section>

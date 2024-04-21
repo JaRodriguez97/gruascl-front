@@ -1,11 +1,11 @@
-.services .content {
+.services ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   margin: 40px 0;
 }
 
-.services .content .serviceBox {
+.services ul li {
   border: var(--border);
   padding: 50px 20px;
   display: flex;
@@ -15,12 +15,12 @@
   flex-direction: column;
 }
 
-.services .content .serviceBox img {
+.services ul li img {
   max-height: 200px;
   max-width: 25vw;
 }
 
-.services .content .serviceBox h3 {
+.services ul li h3 {
   font-size: 1.1em;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -31,12 +31,22 @@
   text-transform: uppercase;
 }
 
-.services .content .serviceBox p {
+.services ul li p {
   text-align: center;
 }
 
+@media (max-width: 991px) {
+  .services ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 680px) {
-  .services .content .serviceBox img {
+  .services ul li img {
     max-width: 50vw;
+  }
+
+  .services ul {
+    grid-template-columns: repeat(1, 1fr) !important;
   }
 }
