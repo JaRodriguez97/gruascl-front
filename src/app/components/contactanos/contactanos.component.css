@@ -35,19 +35,19 @@
   margin-top: 30px;
 }
 
-.container .contactInfo {
+.container ul {
   width: 50%;
   display: flex;
   flex-direction: column;
 }
 
-.container .contactInfo .box {
+.container ul li {
   position: relative;
   padding: 20px 0;
   display: flex;
 }
 
-.container .contactInfo .box .icon {
+.container ul li .icon {
   min-width: 60px;
   height: 60px;
   display: flex;
@@ -63,19 +63,19 @@
   }
 }
 
-.container .contactInfo .box .text {
+.container ul li article {
   display: flex;
   margin-left: 20px;
   flex-direction: column;
   font-size: 16px;
 }
 
-.container .contactInfo .box .text h4 {
-  font-weight: 500;
+.container ul li article h3 {
+  font-weight: 600;
   color: var(--colorPrincipal);
 }
 
-/* .container .contactInfo .box .text address {
+/* .container ul li article address {
   color: var(--letrasParrafosColor);
 } */
 
@@ -109,7 +109,7 @@
   resize: none;
 }
 
-.contactForm .inputBox span {
+.contactForm .inputBox label {
   position: absolute;
   left: 0;
   padding: 5px;
@@ -120,10 +120,10 @@
   color: var(--letrasPocoColor);
 }
 
-.contactForm .inputBox input:focus ~ span,
-.contactForm .inputBox input:valid ~ span,
-.contactForm .inputBox textarea:focus ~ span,
-.contactForm .inputBox textarea:valid ~ span {
+.contactForm .inputBox input:focus ~ label,
+.contactForm .inputBox input:valid ~ label,
+.contactForm .inputBox textarea:focus ~ label,
+.contactForm .inputBox textarea:valid ~ label {
   color: var(--colorPrincipal);
   font-size: 12px;
   transform: translateY(-20px);
@@ -149,12 +149,12 @@
     flex-direction: column;
   }
 
-  .container .contactInfo {
+  .container ul {
     margin-bottom: 40px;
     /* align-items: flex-start; */
   }
 
-  .container .contactInfo,
+  .container ul,
   .contactForm {
     width: 100%;
   }
