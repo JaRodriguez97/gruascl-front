@@ -74,42 +74,58 @@ header.sticky ul li a:hover {
 
 .boxBtn {
   position: fixed;
-  top: 10vh;
+  bottom: -70px;
   right: 0;
-  height: 100px;
+  left: 0;
+  height: -moz-fit-content;
   z-index: 6;
   align-items: center;
   display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.boxBtn.show {
+  bottom: 35px;
 }
 
 .boxBtn a {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   padding: 10px 15px;
-  margin: 20px 0;
   color: var(--backgroundColorPrincipal);
-  font-size: 24px;
   text-decoration: none;
-  text-transform: uppercase;
   overflow: hidden;
   transition: 500ms;
-  letter-spacing: 5px;
   background: var(--colorPrincipal);
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
-  width: 7vw;
+  width: -moz-fit-content;
+  width: 200px;
+  height: 50px;
+  justify-content: space-evenly;
+  border-radius: 10px;
 }
 
 .boxBtn a:hover {
-  box-shadow: 0 0 5px var(--colorPrincipal), 0 0 25px var(--colorPrincipal),
-    0 0 50px var(--colorPrincipal), 0 0 200px var(--colorPrincipal);
-  width: 10vw;
+  box-shadow: 0 0 5px var(--backgroundColorSecundario),
+    0 0 15px var(--backgroundColorSecundario),
+    0 0 50px var(--backgroundColorSecundario);
 }
 
-.boxBtn .btnWhatsApp {
-  background-image: url("../../../assets/icons/whatsapp.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 50px;
+.boxBtn a.emergency:hover {
+  box-shadow: 0 0 5px var(--colorPrincipal), 0 0 15px var(--colorPrincipal),
+    0 0 50px var(--colorPrincipal);
+}
+
+.boxBtn a.emergency {
+  background: var(--backgroundColorSecundario);
+}
+
+.boxBtn a.emergency::after {
+  content: "\01F6A8";
+  font-size: 1.5em;
 }
 
 /* responsive */
@@ -170,15 +186,7 @@ header.sticky ul li a:hover {
 }
 
 @media (max-width: 750px) {
-  .boxBtn {
-    top: 10vh;
-  }
-
-  .boxBtn a {
-    width: 15vh;
-  }
-
   .boxBtn a:hover {
-    width: 18vh;
+    width: 15vh;
   }
 }

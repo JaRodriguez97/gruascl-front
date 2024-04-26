@@ -59,7 +59,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #e6f3dc;
+  background-color: var(--backgroundColorSecundario);
 }
 
 .adjust {
@@ -84,31 +84,6 @@ section {
   position: relative;
 }
 
-mat-icon:hover {
-  color: var(--colorPrincipal);
-  cursor: pointer;
-}
-
-mat-progress-bar {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  height: 1vh !important;
-}
-
-.mat-progress-bar-fill::after {
-  background-color: var(--colorPrincipal);
-}
-
-.mat-progress-bar-buffer {
-  background: var(--backgroundColorPrincipal);
-}
-
-.mat-progress-bar {
-  border-radius: 20px;
-}
-
 .btn {
   position: relative;
   display: inline-block;
@@ -116,20 +91,17 @@ mat-progress-bar {
   text-decoration: none;
   background: var(--colorPrincipal);
   color: var(--letrasSinContrasteColor);
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 4px;
   letter-spacing: 1px;
   border: none;
   cursor: pointer;
 }
 
-.mat-form-field.mat-focused .mat-form-field-label {
-  caret-color: var(--colorPrincipal);
-}
-
 p {
   color: var(--letrasParrafosColor);
   text-wrap: pretty;
+  margin: 0 !important;
 }
 
 span {
@@ -176,25 +148,6 @@ app-landing {
   position: absolute;
 }
 
-mat-card-header {
-  text-align: center;
-}
-
-mat-card-title {
-  font-size: 1.3rem;
-}
-
-mat-grid-tile,
-mat-card {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: var(--boxShadowOscura) !important;
-  background: var(--backgroundColorPrincipal) !important;
-  color: #fff;
-  padding: 30px !important;
-  border-radius: 4px;
-  width: 30vw;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -209,25 +162,11 @@ button[type="button"] {
   background-color: #fff;
 }
 
-.mat-flat-button.mat-primary,
-.mat-raised-button.mat-primary,
-.mat-fab.mat-primary,
-.mat-mini-fab.mat-primary {
-  background-color: var(--colorPrincipal);
-}
-
 a {
   color: var(--colorPrincipal);
   text-decoration: underline;
 }
 
-p {
-  margin: 0 !important;
-}
-
-.mat-form-field-flex {
-  padding: 0 0.75em;
-}
 /* !!! responsive !!! */
 
 @media (max-width: 991px) {

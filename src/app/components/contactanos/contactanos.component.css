@@ -1,6 +1,6 @@
 .contact {
   min-height: 100vh;
-  padding: 50px 100px;
+  padding: 30px 100px;
   align-items: flex-start;
   flex-direction: column;
   background-image: url("../../../assets/images/bg.jpg");
@@ -12,7 +12,7 @@
 .contact .content {
   max-width: 800px;
   text-align: left;
-  padding-top: 80px;
+  padding-top: 40px;
   margin-left: 4em;
 }
 

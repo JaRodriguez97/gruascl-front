@@ -5,6 +5,7 @@ import {
   faInstagram,
   faGoogle,
   faTiktok,
+  faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
 // import moduleName from '@fortawesome/free';
 
@@ -18,6 +19,7 @@ export class IndexComponent implements OnInit {
   faInstagram = faInstagram;
   faGoogle = faGoogle;
   faTiktok = faTiktok;
+  faWhatsapp = faWhatsapp;
 
   constructor() {} // public publicService: PublicService
   ngOnInit() {}

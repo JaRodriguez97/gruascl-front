@@ -20,3 +20,16 @@
   border-radius: 50%;
   aspect-ratio: 400 / 222;
 }
+
+@media (max-width: 991px) {
+  .nosotros .content {
+    margin-top: 50px;
+    flex-direction: column-reverse;
+  }
+
+  .nosotros .content .textBox {
+    width: 100%;
+    min-width: 100%;
+    gap: 70px;
+  }
+}
