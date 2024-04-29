@@ -1,11 +1,11 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-servicios',
   templateUrl: './servicios.component.html',
   styleUrls: ['./servicios.component.css'],
 })
-export class ServiciosComponent implements OnInit, AfterViewInit {
+export class ServiciosComponent implements OnInit {
   servicios: {
     src: string;
     alt: string;
@@ -18,8 +18,9 @@ export class ServiciosComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {}
 
-  ngAfterViewInit(): void {
-    setTimeout(() => {
+  @HostListener('window:scroll')
+  scrolling(): void {
+    if (window.scrollY >= window.innerHeight * 1.5) {
       this.servicios = [
         {
           src: 'https://gruascl.com/assets/servicioImg/servicio01.webp',
@@ -70,6 +71,6 @@ export class ServiciosComponent implements OnInit, AfterViewInit {
             'En nuestro equipo, contamos con profesionales altamente capacitados y la maquinaria especializada necesaria para abordar con éxito cualquier situación de rescate que se presente.',
         },
       ];
-    }, 2000);
+    }
   }
 }

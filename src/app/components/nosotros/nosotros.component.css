@@ -12,11 +12,19 @@
 }
 
 .nosotros .content .imgBx {
-  max-width: 400px;
+  position: relative;
+  min-width: 50%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nosotros .content .imgBx img {
-  max-width: 100%;
+  position: relative;
+  /* object-fit: contain; */
+  max-height: 100%;
   border-radius: 50%;
 }
 
