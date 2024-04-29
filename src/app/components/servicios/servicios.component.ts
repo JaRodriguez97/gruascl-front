@@ -20,7 +20,9 @@ export class ServiciosComponent implements OnInit {
 
   @HostListener('window:scroll')
   scrolling(): void {
-    if (window.scrollY >= window.innerHeight * 1.5) {
+    let multiplicador = window.innerWidth < 500 ? 1.2 : 1.5;
+
+    if (window.scrollY >= window.innerHeight * multiplicador) {
       this.servicios = [
         {
           src: 'https://gruascl.com/assets/servicioImg/servicio01.webp',
