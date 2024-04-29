@@ -10,7 +10,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Router } from '@angular/router';
-// import { PublicService } from "@services/Public/public.service";
+import { ContactService } from '@services/Contact/contact.service';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -38,9 +38,9 @@ export class LandingComponent implements OnInit {
   constructor(
     private render: Renderer2,
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object // public publicService: PublicService
+    public contactService: ContactService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    // Verifica si la aplicación se está ejecutando en un navegador
     this.isBrowser = isPlatformBrowser(this.platformId);
 
     if (this.isBrowser) {
@@ -65,11 +65,7 @@ export class LandingComponent implements OnInit {
     console.log('El dispositivo usado es un celular: ', this.isMobile);
   }
 
-  ngOnInit() {
-    // setTimeout(() => this.publicService.hide(), 1000);
-    // this.token = localStorage.getItem("tokenCNG")!;
-    // if (this.router.url.indexOf("cart") != -1) this.toggleBadgeVisibility();
-  }
+  ngOnInit() {}
 
   @HostListener('window:scroll')
   scrolling(): void {
@@ -89,31 +85,19 @@ export class LandingComponent implements OnInit {
     else this.render.removeClass(this.boxBtn.nativeElement, 'show');
   }
 
-  // toggleBadgeVisibility() {
-  //   if (!this.token)
-  //     Swal.fire({
-  //       title: "Inicia sesión",
-  //       text: "Para ver los productos del carrito debes iniciar sesión",
-  //       icon: "warning",
-  //       confirmButtonText: "Aceptar",
-  //       // }).then(() => this.toggleParpadeo());
-  //     });
-  //   else {
-  //     this.hidden = !this.hidden;
-
-  //     if (this.hidden) this.router.navigate(["/landing/cart"]);
-  //     else this.router.navigate(["/"]);
-  //   }
-  // }
+  sendClick(event: string) {
+    this.contactService.sendClick(event).subscribe({
+      next: (r) =>
+        console.log('se ha dado click en el boton landing: ', event, r),
+      error: (e) => console.error(e),
+      // complete: () => {},
+    });
+  }
 
   toogleMenu() {
     this.menuToggle?.nativeElement?.classList.toggle('active');
     this.menu?.nativeElement?.classList.toggle('active');
   }
-
-  // onDataLoaded() {
-  //   this.progressBar = !this.progressBar;
-  // }
 
   onItemClick(index: number) {
     this.selectedItem = index;

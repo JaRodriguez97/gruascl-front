@@ -18,7 +18,6 @@
 .nosotros .content .imgBx img {
   max-width: 100%;
   border-radius: 50%;
-  aspect-ratio: 400 / 222;
 }
 
 @media (max-width: 991px) {

@@ -22,7 +22,7 @@ export class ServiciosComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       this.servicios = [
         {
-          src: '../../../assets/servicioImg/servicio01.webp',
+          src: 'https://gruascl.com/assets/servicioImg/servicio01.webp',
           alt: 'servicio01 - Servicio grúa',
           title: 'servicio01 - Servicio grúa',
           titulo: 'Servicios Livianos',
@@ -30,7 +30,7 @@ export class ServiciosComponent implements OnInit, AfterViewInit {
             'Disponemos maquinaria de calidad y ofrecemos los precios más competitivos para brindar una asistencia y eficiente en todos los servicios solicitados.',
         },
         {
-          src: '../../../assets/servicioImg/servicio02.webp',
+          src: 'https://gruascl.com/assets/servicioImg/servicio02.webp',
           alt: 'servicio02 - Servicio grúa',
           title: 'servicio02 - Servicio grúa',
           titulo: 'Servicios medianos',
@@ -38,7 +38,7 @@ export class ServiciosComponent implements OnInit, AfterViewInit {
             'Nuestros técnicos altamente capacitados y cualificados están disponibles para proporcionarte la experiencia en y que solo <span>Grúas CL.</span> puede ofrecer.',
         },
         {
-          src: '../../../assets/servicioImg/servicio03.jpg',
+          src: 'https://gruascl.com/assets/servicioImg/servicio03.jpg',
           alt: 'servicio03 - Servicio grúa',
           title: 'servicio03 - Servicio grúa',
           titulo: 'Servicios grandes',
@@ -46,7 +46,7 @@ export class ServiciosComponent implements OnInit, AfterViewInit {
             'Nuestra posición líder en el mercado se debe a nuestra constante responsabilidad y compromiso con la satisfacción de nuestros clientes.',
         },
         {
-          src: '../../../assets/servicioImg/servicio04.jpg',
+          src: 'https://gruascl.com/assets/servicioImg/servicio04.jpg',
           alt: 'servicio04 - Servicio grúa',
           title: 'servicio04 - Servicio grúa',
           titulo: 'Servicio para maquinaria',
@@ -54,7 +54,7 @@ export class ServiciosComponent implements OnInit, AfterViewInit {
             'Somos aliados de tu tiempo y tú economía. En <span>Grúas CL</span>, aseguramos el transporte para su maquinaria contratiempos. Logrando tiempos en entrega increibles además del gran servicio con maquinas pesadas.',
         },
         {
-          src: '../../../assets/servicioImg/servicio05.jpg',
+          src: 'https://gruascl.com/assets/servicioImg/servicio05.jpg',
           alt: 'servicio05 - Servicio grúa',
           title: 'servicio05 - Servicio grúa',
           titulo: 'Servicio grúa telescópica',
@@ -62,7 +62,7 @@ export class ServiciosComponent implements OnInit, AfterViewInit {
             'Disponemos con una extensa variedad de maquinaria económica a tu disposición, lista para ofrecerte soluciones y precisas que se adapten a tus necesidades específicas.',
         },
         {
-          src: '../../../assets/servicioImg/servicio06.jpg',
+          src: 'https://gruascl.com/assets/servicioImg/servicio06.jpg',
           alt: 'servicio06 - Servicio grúa',
           title: 'servicio06 - Servicio grúa',
           titulo: 'Servicio rescate',
@@ -70,6 +70,6 @@ export class ServiciosComponent implements OnInit, AfterViewInit {
             'En nuestro equipo, contamos con profesionales altamente capacitados y la maquinaria especializada necesaria para abordar con éxito cualquier situación de rescate que se presente.',
         },
       ];
-    }, 1500);
+    }, 2000);
   }
 }

@@ -9,7 +9,14 @@
 
   <ul *ngIf="servicios.length">
     <li *ngFor="let s of servicios">
-      <img [src]="s.src" [alt]="s.alt" [title]="s.title" loading="lazy" />
+      <img
+        [src]="s.src"
+        [alt]="s.alt"
+        [title]="s.title"
+        loading="lazy"
+        width="340"
+        height="200"
+      />
       <h3>{{ s.titulo }}</h3>
       <p [innerHTML]="s.parrafo"></p>
     </li>

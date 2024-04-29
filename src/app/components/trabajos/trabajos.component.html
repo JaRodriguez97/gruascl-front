@@ -9,7 +9,14 @@
   <ul *ngIf="trabajos.length">
     <li *ngFor="let t of trabajos">
       <div class="imgBx">
-        <img [src]="t.src" [alt]="t.alt" [title]="t.title" loading="lazy" />
+        <img
+          [src]="t.src"
+          [alt]="t.alt"
+          [title]="t.title"
+          loading="lazy"
+          width="500"
+          height="300"
+        />
       </div>
       <div class="textBx">
         <span>{{ t.text }}</span>

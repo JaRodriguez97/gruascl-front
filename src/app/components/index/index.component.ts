@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactService } from "@app/services/Contact/contact.service";
+import { ContactService } from '@app/services/Contact/contact.service';
 import {
   faFacebookF,
   faInstagram,
@@ -25,11 +25,10 @@ export class IndexComponent implements OnInit {
   ngOnInit() {}
 
   sendClick(event: string) {
-
     this.contactService.sendClick(event).subscribe({
-      next:(r)=>{},
-      error:(e)=>{},
-      complete:()=>{}
-    })
+      next: (r) => console.log('se ha dado click en el boton index: ', event, r),
+      error: (e) => console.error(e),
+      // complete: () => {},
+    });
   }
 }

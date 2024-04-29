@@ -43,7 +43,7 @@
 
 @media (max-width: 680px) {
   .services ul li img {
-    max-width: 50vw;
+    max-width: fit-content;
   }
 
   .services ul {
