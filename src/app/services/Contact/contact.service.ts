@@ -25,4 +25,10 @@ export class ContactService {
       { headers }
     );
   }
+
+  sendClick(event: string) {
+    let headers = this.headers();
+
+    return this.http.post(this.URL + 'click', { event }, { headers });
+  }
 }

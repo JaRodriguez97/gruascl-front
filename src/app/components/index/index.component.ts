@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { PublicService } from "@app/services/Public/public.service";
+import { ContactService } from "@app/services/Contact/contact.service";
 import {
   faFacebookF,
   faInstagram,
@@ -7,7 +7,6 @@ import {
   faTiktok,
   faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
-// import moduleName from '@fortawesome/free';
 
 @Component({
   selector: 'app-index',
@@ -21,6 +20,16 @@ export class IndexComponent implements OnInit {
   faTiktok = faTiktok;
   faWhatsapp = faWhatsapp;
 
-  constructor() {} // public publicService: PublicService
+  constructor(public contactService: ContactService) {}
+
   ngOnInit() {}
+
+  sendClick(event: string) {
+
+    this.contactService.sendClick(event).subscribe({
+      next:(r)=>{},
+      error:(e)=>{},
+      complete:()=>{}
+    })
+  }
 }
