@@ -23,8 +23,7 @@
 
 .nosotros .content .imgBx img {
   position: relative;
-  /* object-fit: contain; */
-  max-height: 100%;
+  max-width: 100%;
   border-radius: 50%;
 }
 

@@ -1,19 +1,22 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-trabajos',
   templateUrl: './trabajos.component.html',
   styleUrls: ['./trabajos.component.css'],
 })
-export class TrabajosComponent implements OnInit, AfterViewInit {
+export class TrabajosComponent implements OnInit {
   trabajos: { src: string; alt: string; title: string; text: string }[] = [];
 
   constructor() {}
 
   ngOnInit() {}
 
-  ngAfterViewInit(): void {
-    setTimeout(() => {
+  @HostListener('window:scroll')
+  scrolling(): void {
+    let multiplicador = window.innerWidth < 500 ? 5 : 2;
+
+    if (window.scrollY >= window.innerHeight * multiplicador) {
       this.trabajos = [
         {
           src: 'https://gruascl.com/assets/trabajosImg/img1.jpg',
@@ -70,6 +73,6 @@ export class TrabajosComponent implements OnInit, AfterViewInit {
           text: 'Proyecto 09',
         },
       ];
-    }, 2000);
+    }
   }
 }
