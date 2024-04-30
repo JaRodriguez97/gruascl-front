@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 // import { PublicService } from "@app/services/Public/public.service";
@@ -22,9 +29,12 @@ export class ContactanosComponent implements OnInit {
   faEnvelope = faEnvelope;
   textButton: string = 'Enviar';
 
+  @ViewChild('contact') contact!: ElementRef;
+
   constructor(
     private contactService: ContactService,
     private router: Router,
+    private render: Renderer2,
     // private publicService: PublicService,
     private readonly formBuilder: FormBuilder
   ) {}
@@ -37,7 +47,19 @@ export class ContactanosComponent implements OnInit {
     });
   }
 
-  async sendContactMail(form: FormGroup): Promise<any> {
+  @HostListener('window:scroll')
+  scrolling(): void {
+    let scrollHide =
+      // this.isMobile
+      //   ? window.document.body.offsetHeight * 10.3
+      //   :
+      window.document.body.offsetHeight * 5.5;
+
+    if (window.scrollY > scrollHide)
+      this.render.addClass(this.contact.nativeElement, 'img');
+  }
+
+  sendContactMail(form: FormGroup): any {
     // this.publicService.show();
 
     if (this.textButton == 'Cargando...')

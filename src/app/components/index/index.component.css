@@ -1,8 +1,4 @@
 section {
-  padding: 100px 30px;
-}
-
-.banner {
   left: 0;
   width: 100%;
   height: 100vh;
@@ -11,11 +7,11 @@ section {
   background: var(--backgroundColorPrincipal);
 }
 
-.banner.active {
+section.active {
   left: 10%;
 }
 
-.banner .imgBx {
+section .imgBx {
   position: relative;
   min-width: 50%;
   height: 100%;
@@ -25,42 +21,43 @@ section {
   align-items: center;
 }
 
-.banner .imgBx .cover {
+section .imgBx .cover {
   position: relative;
   object-fit: contain;
   max-height: 100%;
 }
 
-.banner .content {
+section main {
   max-width: 700px;
   margin-left: 40px;
   gap: 20px;
   display: grid;
 }
 
-.banner .content .btnBox {
+section main .btnBox {
   height: fit-content;
   display: flex;
   gap: 15px;
 }
 
-.banner .content .btnBox a {
+section main .btnBox a {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  padding: 5px;
 }
 
-.banner .content .btnBox a.emergency {
+section main .btnBox a.emergency {
   background: var(--backgroundColorSecundario);
 }
 
-.banner .content .btnBox a.emergency::after {
+section main .btnBox a.emergency::after {
   content: "\01F6A8";
   font-size: 1.5em;
 }
 
-.banner .content h1 {
+section main h1 {
   letter-spacing: 1px;
   margin: 0;
   font-weight: bolder;
@@ -69,7 +66,7 @@ section {
   -webkit-text-stroke: 0.3px #00000085;
 }
 
-.banner .content p {
+section main p {
   color: var(--letrasParrafosColor);
   font-size: 1em;
   margin-bottom: 20px;
@@ -86,40 +83,40 @@ footer {
   align-items: center;
 }
 
-.sci {
+footer ul {
   position: relative;
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.sci li {
+footer ul li {
   list-style: none;
 }
 
-.sci li a {
+footer ul li a {
   position: relative;
   display: inline-block;
 }
 
-.sci li a fa-icon {
+footer ul li a fa-icon {
   color: var(--letrasTitulosColor);
   font-size: 1.8rem;
 }
 
-.sci li a fa-icon:hover {
+footer ul li a fa-icon:hover {
   color: var(--colorPrincipal);
 }
 
-.copyrightText {
+footer p {
   font-weight: 500;
   color: var(--letrasPocoColor);
   letter-spacing: 1px;
+  text-align: center;
 }
 
-.copyrightText a {
+footer p a {
   font-weight: 600;
-  color: var(--colorPrincipal);
   letter-spacing: 1.1px;
   text-decoration: none;
 }
@@ -127,44 +124,40 @@ footer {
 /* responsive */
 
 @media (max-width: 991px) {
-  .banner {
+  section {
     flex-direction: column;
     padding: 40px;
   }
 
-  .banner .imgBx {
+  section .imgBx {
     width: 300px;
     min-width: 300px;
     height: 300px;
     margin-top: 50px;
   }
 
-  .banner .content {
-    margin-bottom: 50px;
+  section main {
     margin-left: 0;
     max-width: 100%;
     text-align: center;
   }
 
-  .banner .content .btnBox {
+  section main .btnBox {
     left: 0;
     right: 0;
     position: relative;
-    margin: auto;
     font-size: 1.5em;
     flex-direction: column;
-    gap: 10px;
-    width: 100%;
   }
 
-  footer {
-    padding: 20px 40px;
-    p {
-      font-size: 0.77em;
-    }
-  }
-
-  footer {
+  section footer {
+    position: relative;
+    padding: 10px 0;
     flex-direction: column;
+    gap: 5px;
+
+    p {
+      font-size: 0.8em;
+    }
   }
 }

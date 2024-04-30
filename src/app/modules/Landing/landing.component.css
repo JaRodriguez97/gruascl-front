@@ -77,7 +77,6 @@ header.sticky ul li a:hover {
   bottom: -70px;
   right: 0;
   left: 0;
-  height: -moz-fit-content;
   z-index: 6;
   align-items: center;
   display: flex;
@@ -173,7 +172,7 @@ header.sticky ul li a:hover {
   .toggle {
     width: 40px;
     height: 40px;
-    background-image: url("../../../assets/images/menu.png");
+    background-image: url("https://gruascl.com/assets/images/menu.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 30px;
@@ -181,7 +180,7 @@ header.sticky ul li a:hover {
   }
 
   .toggle.active {
-    background-image: url("../../../assets/images/close.png");
+    background-image: url("https://gruascl.com/assets/images/close.png");
   }
 }
 

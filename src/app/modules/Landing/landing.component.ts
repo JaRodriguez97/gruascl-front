@@ -77,8 +77,8 @@ export class LandingComponent implements OnInit {
     // Botones fijos
     let scroll = this.isMobile ? (window.screen.availHeight * 65) / 100 : 320;
     let scrollHide = this.isMobile
-      ? window.document.body.offsetHeight * 9
-      : window.document.body.offsetHeight * 5.5;
+      ? window.document.body.offsetHeight * 10.3
+      : window.document.body.offsetHeight * 6.3;
 
     if (window.scrollY > scroll && window.scrollY < scrollHide)
       this.render.addClass(this.boxBtn.nativeElement, 'show');
