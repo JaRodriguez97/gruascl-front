@@ -1,17 +1,6 @@
-import { isPlatformBrowser } from '@angular/common';
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  Inject,
-  OnInit,
-  PLATFORM_ID,
-  Renderer2,
-  ViewChild,
-} from '@angular/core';
-import { Router } from '@angular/router';
-import { ContactService } from '@services/Contact/contact.service';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { PublicService } from '@services/Public/public.service';
 
 @Component({
   selector: 'app-landing',
@@ -19,92 +8,62 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./landing.component.css'],
 })
 export class LandingComponent implements OnInit {
-  sections: string[] = ['Inicio', 'Productos', 'Contactanos'];
-  selectedItem: number | null = null;
-  activeClassHeader: Boolean = false;
-  activeClassNav: Boolean = false;
-  public isBrowser!: boolean;
-  public isMobile!: boolean;
-  productos: [] = [];
-  hidden = false;
   faWhatsapp = faWhatsapp;
-  // token!: string;
 
-  @ViewChild('menuToggle') menuToggle!: ElementRef;
-  @ViewChild('menu') menu!: ElementRef;
-  @ViewChild('header') header!: ElementRef;
-  @ViewChild('boxBtn') boxBtn!: ElementRef;
-
-  constructor(
-    private render: Renderer2,
-    private router: Router,
-    public contactService: ContactService,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
-
-    if (this.isBrowser) {
-      // Obtén el agente de usuario del navegador
-      //@ts-ignore
-      const { userAgentData, userAgent } = window.navigator;
-
-      if (userAgentData) this.isMobile = userAgentData.mobile;
-      else if (
-        userAgent.match(/Android/i) ||
-        userAgent.match(/webOS/i) ||
-        userAgent.match(/iPhone/i) ||
-        userAgent.match(/iPad/i) ||
-        userAgent.match(/iPod/i) ||
-        userAgent.match(/BlackBerry/i) ||
-        userAgent.match(/Windows Phone/i)
-      )
-        this.isMobile = true;
-      else this.isMobile = false;
-    }
-
-    console.log('El dispositivo usado es un celular: ', this.isMobile);
-  }
+  constructor(public publicService: PublicService) {}
 
   ngOnInit() {}
 
   @HostListener('window:scroll')
   scrolling(): void {
+    let { scrollY, innerHeight } = window;
+    let { isMobile } = this.publicService;
+
     // Header
-    if (window.scrollY > 0)
-      this.render.addClass(this.header.nativeElement, 'sticky');
-    else this.render.removeClass(this.header.nativeElement, 'sticky');
+    this.publicService.sticky = scrollY > 0;
 
     // Botones fijos
-    let scroll = this.isMobile ? (window.screen.availHeight * 65) / 100 : 320;
-    let scrollHide = this.isMobile
-      ? window.document.body.offsetHeight * 10.3
-      : window.document.body.offsetHeight * 6.3;
+    let scroll = isMobile ? innerHeight * 0.65 : 320,
+      scrollHide = isMobile ? innerHeight * 10.3 : innerHeight * 6.3;
 
-    if (window.scrollY > scroll && window.scrollY < scrollHide)
-      this.render.addClass(this.boxBtn.nativeElement, 'show');
-    else this.render.removeClass(this.boxBtn.nativeElement, 'show');
-  }
+    this.publicService.show = scrollY > scroll && scrollY < scrollHide;
 
-  sendClick(event: string) {
-    this.contactService.sendClick(event).subscribe({
-      next: (r) =>
-        console.log('se ha dado click en el boton landing: ', event, r),
-      error: (e) => console.error(e),
-      // complete: () => {},
-    });
+    // Servicios
+    if (scrollY >= innerHeight) this.publicService.servicios = true;
+
+    // Trabajos
+    let multiplicadorTrabajos = isMobile ? 4 : 2.3;
+
+    if (scrollY >= innerHeight * multiplicadorTrabajos)
+      this.publicService.trabajos = true;
+
+    // testimonios
+    let multiplicadorReseñas = isMobile ? 7 : 4;
+
+    if (scrollY >= innerHeight * multiplicadorReseñas)
+      this.publicService.testimonios = true;
+
+    // imagen contacto
+    let scrollShow = isMobile ? 10 : 5.5;
+
+    if (scrollY > innerHeight * scrollShow)
+      this.publicService.contactImg = true;
   }
 
   toogleMenu() {
-    this.menuToggle?.nativeElement?.classList.toggle('active');
-    this.menu?.nativeElement?.classList.toggle('active');
+    this.publicService.servicios = true;
+    this.publicService.trabajos = true;
+    this.publicService.testimonios = true;
+    this.publicService.contactImg = true;
+
+    this.publicService.menuToggle = !this.publicService.menuToggle;
+    this.publicService.menu = !this.publicService.menu;
   }
 
-  onItemClick(index: number) {
-    this.selectedItem = index;
-    this.addClass();
-  }
-
-  addClass() {
-    this.activeClassNav = !this.activeClassNav;
+  sendClick(event: string) {
+    this.publicService.sendClick(event).subscribe({
+      next: () => {},
+      error: (e) => console.error(e),
+    });
   }
 }

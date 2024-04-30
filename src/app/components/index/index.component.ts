@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactService } from '@app/services/Contact/contact.service';
+import { PublicService } from '@app/services/Public/public.service';
 import {
   faFacebookF,
-  faInstagram,
   faGoogle,
+  faInstagram,
   faTiktok,
   faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
@@ -20,15 +20,14 @@ export class IndexComponent implements OnInit {
   faTiktok = faTiktok;
   faWhatsapp = faWhatsapp;
 
-  constructor(public contactService: ContactService) {}
+  constructor(private publicService: PublicService) {}
 
   ngOnInit() {}
 
   sendClick(event: string) {
-    this.contactService.sendClick(event).subscribe({
-      next: (r) => console.log('se ha dado click en el boton index: ', event, r),
+    this.publicService.sendClick(event).subscribe({
+      next: () => {},
       error: (e) => console.error(e),
-      // complete: () => {},
     });
   }
 }

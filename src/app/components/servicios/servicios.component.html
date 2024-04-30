@@ -1,4 +1,4 @@
-<section class="services adjust">
+<section class="services adjust" *ngIf="publicService.servicios">
   <div class="title">
     <h2>Servicios Que Ofrecemos</h2>
     <p>
@@ -7,7 +7,7 @@
     </p>
   </div>
 
-  <ul *ngIf="servicios.length">
+  <ul>
     <li *ngFor="let s of servicios">
       <img
         [src]="s.src"

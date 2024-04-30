@@ -1,4 +1,4 @@
-<section class="testimonials adjust">
+<section class="testimonials adjust" *ngIf="publicService.testimonios">
   <div class="title">
     <h2>Reseñas de nuestros servicios</h2>
     <p>
@@ -6,7 +6,7 @@
     </p>
   </div>
 
-  <ul *ngIf="testimonios.length">
+  <ul>
     <li *ngFor="let t of testimonios">
       <p [innerHTML]="t.parrafo"></p>
       <h3>

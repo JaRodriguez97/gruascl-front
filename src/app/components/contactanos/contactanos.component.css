@@ -3,14 +3,10 @@
   padding: 30px 100px;
   align-items: flex-start;
   flex-direction: column;
-
-  width: 100%;
-  color: var(--letrasSinContrasteColor);
-}
-
-.contact.img {
   background-image: url("https://gruascl.com/assets/images/bg.jpg");
   background-size: cover;
+  width: 100%;
+  color: var(--letrasSinContrasteColor);
 }
 
 .contact .content {

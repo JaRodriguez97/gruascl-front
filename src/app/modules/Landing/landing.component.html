@@ -1,7 +1,10 @@
-<header #header>
+<header [ngClass]="{ sticky: publicService.sticky }">
   <a routerLink="/" class="logo">Grúas CL</a>
-  <div #menuToggle class="toggle" (click)="toogleMenu()"></div>
-  <ul #menu class="menu">
+  <div
+    [ngClass]="{ active: publicService.menuToggle, toggle: true }"
+    (click)="toogleMenu()"
+  ></div>
+  <ul [ngClass]="{ menu: true, active: publicService.menu }">
     <li>
       <a
         href="servicio-grua-cali-economicas-24-horas#inicio"
@@ -48,7 +51,10 @@
 </header>
 
 <!-- BTN WhatsApp BTN -->
-<div class="boxBtn" #boxBtn title="Servicios de Grua en Cali 24 Horas">
+<div
+  [ngClass]="{ show: publicService.show, boxBtn: true }"
+  title="Servicios de Grua en Cali 24 Horas"
+>
   <a
     href="https://wa.me/573135804298"
     target="_blank"

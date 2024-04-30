@@ -1,21 +1,13 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  OnInit,
-  Renderer2,
-  ViewChild,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-// import { PublicService } from "@app/services/Public/public.service";
-import { ContactService } from '@services/Contact/contact.service';
-import Swal from 'sweetalert2';
 import {
-  faPhone,
-  faMapMarked,
   faEnvelope,
+  faMapMarked,
+  faPhone,
 } from '@fortawesome/free-solid-svg-icons';
+import { ContactService } from '@services/Contact/contact.service';
+import { PublicService } from '@services/Public/public.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contactanos',
@@ -29,13 +21,9 @@ export class ContactanosComponent implements OnInit {
   faEnvelope = faEnvelope;
   textButton: string = 'Enviar';
 
-  @ViewChild('contact') contact!: ElementRef;
-
   constructor(
     private contactService: ContactService,
-    private router: Router,
-    private render: Renderer2,
-    // private publicService: PublicService,
+    public publicService: PublicService,
     private readonly formBuilder: FormBuilder
   ) {}
 
@@ -47,21 +35,7 @@ export class ContactanosComponent implements OnInit {
     });
   }
 
-  @HostListener('window:scroll')
-  scrolling(): void {
-    let scrollHide =
-      // this.isMobile
-      //   ? window.document.body.offsetHeight * 10.3
-      //   :
-      window.document.body.offsetHeight * 5.5;
-
-    if (window.scrollY > scrollHide)
-      this.render.addClass(this.contact.nativeElement, 'img');
-  }
-
   sendContactMail(form: FormGroup): any {
-    // this.publicService.show();
-
     if (this.textButton == 'Cargando...')
       return Swal.fire({
         icon: 'warning',
@@ -81,7 +55,6 @@ export class ContactanosComponent implements OnInit {
         html: '<span>Por favor diligencie los campos obligatorios para poder enviar el mensaje</span>',
         scrollbarPadding: false,
       }).then(() => (this.textButton = 'Enviar'));
-    // .then(() => this.publicService.hide());
 
     this.contactService.sendMesage(value).subscribe({
       next: (res) => {
@@ -90,7 +63,6 @@ export class ContactanosComponent implements OnInit {
           icon: 'success',
           title: res.message,
           html: '<span>Prontamente un operador le contactará</span>',
-          // scrollbarPadding: false,
         }).then(() => form.reset());
       },
       error: (err) => {

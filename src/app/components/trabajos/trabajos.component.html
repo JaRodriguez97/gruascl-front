@@ -1,4 +1,4 @@
-<section class="project adjust">
+<section class="project adjust" *ngIf="publicService.trabajos">
   <div class="title">
     <h2>Trabajos Recientes</h2>
     <p>
@@ -6,7 +6,7 @@
     </p>
   </div>
 
-  <ul *ngIf="trabajos.length">
+  <ul>
     <li *ngFor="let t of trabajos">
       <div class="imgBx">
         <img
