@@ -8,10 +8,11 @@
       loading="lazy"
       width="330"
       height="400"
+      (load)="onLogoLoad()"
     />
   </div>
 
-  <main>
+  <main *ngIf="publicService.imgIndex">
     <h1>Servicio de Grúas CL.</h1>
     <p>
       Una empresa de grúas especializada en trasladar vehículos livianos,

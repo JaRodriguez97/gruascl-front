@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PublicService } from '@services/Public/public.service';
 
 @Component({
   selector: 'app-nosotros',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./nosotros.component.css'],
 })
 export class NosotrosComponent {
-  constructor() {}
+  constructor(public publicService: PublicService) {}
 }

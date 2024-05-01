@@ -20,9 +20,13 @@ export class IndexComponent implements OnInit {
   faTiktok = faTiktok;
   faWhatsapp = faWhatsapp;
 
-  constructor(private publicService: PublicService) {}
+  constructor(public publicService: PublicService) {}
 
   ngOnInit() {}
+
+  onLogoLoad() {
+    this.publicService.imgIndex = true;
+  }
 
   sendClick(event: string) {
     this.publicService.sendClick(event).subscribe({
