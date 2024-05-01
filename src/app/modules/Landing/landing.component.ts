@@ -29,7 +29,7 @@ export class LandingComponent implements OnInit {
     this.publicService.show = scrollY > scroll && scrollY < scrollHide;
 
     // Servicios
-    if (scrollY >= innerHeight) this.publicService.servicios = true;
+    if (scrollY >= scroll) this.publicService.servicios = true;
 
     // Trabajos
     let multiplicadorTrabajos = isMobile ? 4 : 2.3;
@@ -44,7 +44,7 @@ export class LandingComponent implements OnInit {
       this.publicService.testimonios = true;
 
     // imagen contacto
-    let scrollShow = isMobile ? 10 : 5.5;
+    let scrollShow = isMobile ? 9.7 : 5.3;
 
     if (scrollY > innerHeight * scrollShow)
       this.publicService.contactImg = true;
