@@ -1,4 +1,7 @@
-<header [ngClass]="{ sticky: publicService.sticky }">
+<header
+  *ngIf="publicService.imgIndex"
+  [ngClass]="{ sticky: publicService.sticky }"
+>
   <a routerLink="/" class="logo">Grúas CL</a>
   <div
     [ngClass]="{ active: publicService.menuToggle, toggle: true }"

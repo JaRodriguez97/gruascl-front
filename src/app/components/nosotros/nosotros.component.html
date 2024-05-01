@@ -3,7 +3,7 @@
     <h2>Acerca De Nosotros</h2>
   </div>
   <div class="content">
-    <div class="textBox">
+    <div class="textBox" *ngIf="publicService.imgNosotros">
       <p>
         <span>Grúas CL</span> se originó con el propósito de proporcionar
         <strong>
@@ -16,6 +16,7 @@
         garantizando tranquilidad y confianza en cada traslado.
       </p>
     </div>
+
     <div class="imgBx">
       <img
         src="https://gruascl.com/assets/images/nosotros.jpg"
@@ -24,6 +25,7 @@
         loading="lazy"
         width="300"
         height="200"
+        (load)="onLogoLoad()"
       />
     </div>
   </div>

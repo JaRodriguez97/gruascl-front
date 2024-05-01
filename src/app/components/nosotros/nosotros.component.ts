@@ -8,4 +8,8 @@ import { PublicService } from '@services/Public/public.service';
 })
 export class NosotrosComponent {
   constructor(public publicService: PublicService) {}
+
+  onLogoLoad() {
+    this.publicService.imgNosotros = true;
+  }
 }
