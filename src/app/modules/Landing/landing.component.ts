@@ -44,7 +44,7 @@ export class LandingComponent implements OnInit {
       this.publicService.testimonios = true;
 
     // imagen contacto
-    let scrollShow = isMobile ? 9.7 : 5.3;
+    let scrollShow = isMobile ? 9.3 : 5.3;
 
     if (scrollY > innerHeight * scrollShow)
       this.publicService.contactImg = true;
