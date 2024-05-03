@@ -1,4 +1,8 @@
-User-Agent: *
-Allow: /servicio-grua-cali-economicas-24-horas
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
 
-sitemap: https://gruascl.com/sitemap.xml
+Sitemap: https://gruascl.com/sitemap.xml
+# ---------------------------
+# END YOAST BLOCK
