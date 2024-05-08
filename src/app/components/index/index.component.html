@@ -12,14 +12,14 @@
     />
   </div>
 
-  <main *ngIf="publicService.imgIndex">
+  <main>
     <h1>Servicio de Grúas CL.</h1>
-    <p>
+    <p *ngIf="publicService.imgIndex">
       Una empresa de grúas especializada en trasladar vehículos livianos,
       medianos y pesados, así como maquinaria. Ofrecemos servicios de grúas 24
       horas económicas con excelencia, rapidez y dedicación.
     </p>
-    <div class="btnBox">
+    <div *ngIf="publicService.imgIndex" class="btnBox">
       <a
         href="https://wa.me/573135804298"
         target="_blank"
