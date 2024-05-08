@@ -63,6 +63,56 @@ export class TrabajosComponent {
       text: 'Proyecto 09',
     },
   ];
+  btnVisibillity: boolean = true;
 
   constructor(public publicService: PublicService) {}
+
+  onPushImage() {
+    this.trabajos.push(
+      {
+        src: '../../../assets/trabajosImg/img10.jpg',
+        alt: 'img10 - Servicio grúa',
+        title: 'img10 - Servicio grúa',
+        text: 'Proyecto 10',
+      },
+      {
+        src: '../../../assets/trabajosImg/img11.jpg',
+        alt: 'img11 - Servicio grúa',
+        title: 'img11 - Servicio grúa',
+        text: 'Proyecto 11',
+      },
+      {
+        src: '../../../assets/trabajosImg/img12.jpg',
+        alt: 'img12 - Servicio grúa',
+        title: 'img12 - Servicio grúa',
+        text: 'Proyecto 12',
+      },
+      {
+        src: '../../../assets/trabajosImg/img13.jpg',
+        alt: 'img13 - Servicio grúa',
+        title: 'img13 - Servicio grúa',
+        text: 'Proyecto 13',
+      },
+      {
+        src: '../../../assets/trabajosImg/img14.jpg',
+        alt: 'img14 - Servicio grúa',
+        title: 'img14 - Servicio grúa',
+        text: 'Proyecto 14',
+      },
+      {
+        src: '../../../assets/trabajosImg/img15.jpg',
+        alt: 'img15 - Servicio grúa',
+        title: 'img15 - Servicio grúa',
+        text: 'Proyecto 15',
+      },
+      {
+        src: '../../../assets/trabajosImg/img16.jpg',
+        alt: 'img16 - Servicio grúa',
+        title: 'img16 - Servicio grúa',
+        text: 'Proyecto 16',
+      }
+    );
+
+    this.btnVisibillity = false;
+  }
 }

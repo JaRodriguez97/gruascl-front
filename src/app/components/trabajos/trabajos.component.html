@@ -1,4 +1,4 @@
-<section class="project adjust" *ngIf="publicService.trabajos">
+<section class="adjust" *ngIf="publicService.trabajos">
   <div class="title">
     <h2>Trabajos Recientes</h2>
     <p>
@@ -23,4 +23,12 @@
       </div>
     </li>
   </ul>
+
+  <button
+    (click)="onPushImage()"
+    class="btn"
+    *ngIf="btnVisibillity"
+  >
+    Ver Más
+  </button>
 </section>
