@@ -34,4 +34,11 @@ export class IndexComponent implements OnInit {
       error: (e) => console.error(e),
     });
   }
+
+  toogleMenu() {
+    this.publicService.servicios = true;
+    this.publicService.trabajos = true;
+    this.publicService.testimonios = true;
+    this.publicService.contactImg = true;
+  }
 }
