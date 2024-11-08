@@ -5,6 +5,7 @@ section {
   padding: 100px;
   justify-content: space-between;
   background: var(--backgroundColorPrincipal);
+  display: flex;
 }
 
 section.active {
@@ -132,10 +133,19 @@ footer p a {
   }
 
   section .imgBx {
-    width: 300px;
+    /* width: 300px;
     min-width: 300px;
-    height: 300px;
+    height: 300px; */
+    min-height: 30%;
+    min-width: 50%;
     margin-top: 50px;
+  }
+
+  section .imgBx .cover {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
   }
 
   section main {
