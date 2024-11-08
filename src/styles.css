@@ -3,25 +3,27 @@
 :root {
   color-scheme: light dark;
 
-  --colorPrincipal: #ec0188;
+  --colorPrincipal: #a84785;
 
-  --backgroundColorPrincipal: #fff;
+  /* --backgroundColorPrincipal: #fff; */
+  --backgroundColorPrincipal: #000;
   --backgroundColorMedio: #888;
 
-  --backgroundColorSecundario: #000;
+  /* --backgroundColorSecundario: #000; */
+  --backgroundColorSecundario: #fff;
 
-  --letrasSinContrasteColor: #fff;
-  --letrasPocoColor: #888;
-  --letrasParrafosColor: #333;
-  --letrasTitulosColor: #000;
+  --letrasSinContrasteColor: var(--backgroundColorPrincipal);
+  --letrasPocoColor: var(--backgroundColorMedio);
+  --letrasParrafosColor: #ccc;
+  --letrasTitulosColor: var(--backgroundColorSecundario);
 
-  --boxShadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  --boxShadow: 0 5px 20px rgba(255, 255, 255, 0.3);
 
-  --boxShadowOscura: 2px 2px 1px -1px #fff3, 2px 1px 1px #ffffff24,
-    0 1px 3px #ffffff1f;
-  --boxShadowclara: 2px 2px 1px -1px #0003, 2px 1px 1px #00000024,
-    0 1px 3px #00000010;
-  --border: 1px solid rgba(0, 0, 0, 0.2);
+  --boxShadowOscura: 2px 2px 1px -1px #0003, 2px 1px 1px #00000024,
+    0 1px 3px #0000001f;
+  --boxShadowclara: 2px 2px 1px -1px #fff3, 2px 1px 1px #00000024,
+    0 1px 3px #ffffff10;
+  --border: 1px solid rgba(255, 255, 255, 0.2);
   --fontFamily: Roboto, "Helvetica Neue", sans-serif;
 }
 
