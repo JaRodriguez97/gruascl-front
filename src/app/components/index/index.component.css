@@ -37,6 +37,10 @@ section main {
   display: grid;
 }
 
+section main p {
+  text-align: justify;
+}
+
 section main .btnBox {
   height: fit-content;
   display: flex;
