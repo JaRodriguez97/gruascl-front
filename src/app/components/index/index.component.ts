@@ -29,10 +29,10 @@ export class IndexComponent implements OnInit {
   }
 
   sendClick(event: string) {
-    this.publicService.sendClick(event).subscribe({
-      next: () => {},
-      error: (e) => console.error(e),
-    });
+    // this.publicService.sendClick(event).subscribe({
+    //   next: () => {},
+    //   error: (e) => console.error(e),
+    // });
   }
 
   toogleMenu() {

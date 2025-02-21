@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   // urlBack: 'http://localhost:3000/api/',
   urlBack: 'http://gruascl-back.up.railway.app/api/',
+  deploymentTime: new Date().toISOString(), // Fecha de compilación
 };
 
 /*
