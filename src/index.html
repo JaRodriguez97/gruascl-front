@@ -1,32 +1,6 @@
 <!DOCTYPE html>
 <html lang="es-CO">
   <head>
-    <!-- Google Tag Manager -->
-
-    <!--   <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "AW-16528946026");
-    </script>
-Google tag (gtag.js) 
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16528946026">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-16528946026');
-</script>-->
-    <!-- End Google Tag Manager -->
-
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -40,6 +14,22 @@ Google tag (gtag.js)
       gtag("js", new Date());
 
       gtag("config", "G-CMX05HB1RN");
+    </script>
+
+    <!-- Event snippet for whatsapp web conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-16528946026/3HiyCOXAt6wZEOrmzsk9",
+          event_callback: callback,
+        });
+        return false;
+      }
     </script>
     <base href="/" />
 

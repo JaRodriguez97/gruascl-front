@@ -8,6 +8,8 @@ import {
   faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
 
+declare function gtag_report_conversion(url?: string): boolean;
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -33,6 +35,7 @@ export class IndexComponent implements OnInit {
     //   next: () => {},
     //   error: (e) => console.error(e),
     // });
+    gtag_report_conversion('https://wa.me/+573215325109');
   }
 
   toogleMenu() {
