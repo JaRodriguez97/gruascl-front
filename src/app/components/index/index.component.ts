@@ -35,7 +35,7 @@ export class IndexComponent implements OnInit {
     //   next: () => {},
     //   error: (e) => console.error(e),
     // });
-    gtag_report_conversion('https://wa.me/+573215325109');
+    gtag_report_conversion();
   }
 
   toogleMenu() {
