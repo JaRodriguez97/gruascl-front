@@ -25,7 +25,12 @@ export class LandingComponent implements OnInit {
 
   @HostListener('window:scroll')
   scrolling(): void {
-    let { scrollY, innerHeight } = window;
+    // Validación SSR-safe para el scroll listener
+    if (!this.publicService.isScrollListenerSafe()) {
+      return;
+    }
+
+    let { scrollY, innerHeight } = this.publicService.getWindowDimensions();
     let { isMobile } = this.publicService;
 
     // Header

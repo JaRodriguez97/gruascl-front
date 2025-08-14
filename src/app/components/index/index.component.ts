@@ -61,7 +61,14 @@ export class IndexComponent implements OnInit, AfterViewInit {
   }
 
   private scheduleNonCriticalTasks() {
-    // Usar requestIdleCallback para tareas no críticas o fallback con setTimeout
+    // Usar requestIdleCallback para tareas no críticas solo en el navegador (SSR-safe)
+    const window = this.publicService.getWindow();
+    if (!window) {
+      // En SSR, ejecutar inmediatamente las tareas críticas
+      this.initializeAnalytics();
+      return;
+    }
+
     const idleCallback = (deadline: any) => {
       // Tareas no críticas durante tiempo libre
       if (deadline.timeRemaining() > 0 || deadline.didTimeout) {

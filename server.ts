@@ -3,6 +3,7 @@ import 'zone.js/node';
 import { APP_BASE_HREF } from '@angular/common';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
+import * as compression from 'compression';
 import { existsSync } from 'fs';
 import { join } from 'path';
 
@@ -15,6 +16,24 @@ export function app(): express.Express {
   const indexHtml = existsSync(join(distFolder, 'index.original.html'))
     ? 'index.original.html'
     : 'index';
+
+  // Habilitar compresión gzip/deflate
+  server.use(compression({
+    // Solo comprimir respuestas mayores a 1KB
+    threshold: 1024,
+    // Nivel de compresión (1-9, siendo 6 el balance óptimo)
+    level: 6,
+    // Filtrar qué tipos de contenido comprimir
+    filter: (req, res) => {
+      // No comprimir respuestas con Cache-Control: no-transform
+      const cacheControl = res.getHeader('Cache-Control');
+      if (cacheControl && cacheControl.toString().includes('no-transform')) {
+        return false;
+      }
+      // Usar el filtro por defecto de compression
+      return compression.filter(req, res);
+    }
+  }));
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine(
@@ -29,11 +48,33 @@ export function app(): express.Express {
 
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
-  // Serve static files from /browser
+  // Serve static files from /browser con cache estratificado
   server.get(
     '*.*',
     express.static(distFolder, {
-      maxAge: '1y',
+      maxAge: '1y', // Por defecto 1 año
+      setHeaders: (res, path) => {
+        // Cache estratificado por tipo de archivo
+        if (path.includes('.html')) {
+          // HTML files: cache corto para permitir actualizaciones
+          res.setHeader('Cache-Control', 'public, max-age=300'); // 5 minutos
+          res.setHeader('ETag', 'weak');
+        } else if (path.includes('.js') || path.includes('.css')) {
+          // JS/CSS: cache largo con versionado
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable'); // 1 año
+        } else if (path.includes('.webp') || path.includes('.jpg') || path.includes('.png') || path.includes('.gif')) {
+          // Imágenes: cache medio-largo
+          res.setHeader('Cache-Control', 'public, max-age=2592000'); // 30 días
+        } else if (path.includes('.ico') || path.includes('.woff') || path.includes('.woff2')) {
+          // Icons y fonts: cache muy largo
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable'); // 1 año
+        }
+        
+        // Headers de seguridad y performance
+        res.setHeader('X-Content-Type-Options', 'nosniff');
+        res.setHeader('X-Frame-Options', 'DENY');
+        res.setHeader('X-XSS-Protection', '1; mode=block');
+      }
     })
   );
 

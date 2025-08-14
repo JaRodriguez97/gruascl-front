@@ -60,4 +60,74 @@ export class PublicService {
 
     return this.http.post(this.URL + 'click', { event }, { headers });
   }
+
+  // Métodos seguros para SSR
+  getWindow(): Window | null {
+    return this.isBrowser ? window : null;
+  }
+
+  getDocument(): Document | null {
+    return this.isBrowser ? document : null;
+  }
+
+  getNavigator(): Navigator | null {
+    return this.isBrowser ? navigator : null;
+  }
+
+  // Método seguro para obtener dimensiones de ventana
+  getWindowDimensions(): { scrollY: number; innerHeight: number; innerWidth: number } {
+    if (!this.isBrowser) {
+      return { scrollY: 0, innerHeight: 0, innerWidth: 0 };
+    }
+    return {
+      scrollY: window.scrollY || 0,
+      innerHeight: window.innerHeight || 0,
+      innerWidth: window.innerWidth || 0
+    };
+  }
+
+  // Método seguro para scroll listeners
+  isScrollListenerSafe(): boolean {
+    return this.isBrowser && typeof window !== 'undefined' && typeof window.scrollY !== 'undefined';
+  }
+
+  // Método seguro para localStorage
+  setLocalStorage(key: string, value: string): boolean {
+    if (this.isBrowser && typeof Storage !== 'undefined') {
+      try {
+        localStorage.setItem(key, value);
+        return true;
+      } catch (e) {
+        console.warn('LocalStorage no disponible:', e);
+        return false;
+      }
+    }
+    return false;
+  }
+
+  getLocalStorage(key: string): string | null {
+    if (this.isBrowser && typeof Storage !== 'undefined') {
+      try {
+        return localStorage.getItem(key);
+      } catch (e) {
+        console.warn('LocalStorage no disponible:', e);
+        return null;
+      }
+    }
+    return null;
+  }
+
+  // Método seguro para manipular clases del body
+  toggleBodyClass(className: string, add: boolean = true): boolean {
+    const document = this.getDocument();
+    if (document) {
+      if (add) {
+        document.body.classList.add(className);
+      } else {
+        document.body.classList.remove(className);
+      }
+      return true;
+    }
+    return false;
+  }
 }

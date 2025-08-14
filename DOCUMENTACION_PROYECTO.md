@@ -248,8 +248,8 @@ src/
 - [x] Evita que haya varias redirecciones de página al ingresar → Router optimizado, sin redirecciones server-side problemáticas
 
 #### **3.3 Caching y Compresión**
-- [ ] Implementar el publicService donde sea necesario validar si está en el navegdor o en el servidor
-- [ ] Configurar cache headers
+- [x] Implementar el publicService donde sea necesario validar si está en el navegador o en el servidor → Métodos SSR-safe añadidos: getWindow(), getDocument(), getNavigator(), getWindowDimensions(), toggleBodyClass(), localStorage seguro. Implementado en LandingComponent y AppComponent
+- [ ] Configurar cache headers  
 - [ ] Minificar CSS/JS en producción
 - [ ] Implementar service workers básicos
 - [ ] Optimizar bundle sizes
