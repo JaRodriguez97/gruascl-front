@@ -3,7 +3,10 @@
   padding: 30px 100px;
   align-items: flex-start;
   flex-direction: column;
-  background-image: radial-gradient(transparent, var(--backgroundColorPrincipal)),
+  background-image: radial-gradient(
+      transparent,
+      var(--backgroundColorPrincipal)
+    ),
     url("https://gruascl.com/assets/images/bg.webp");
   background-size: cover;
   width: 100%;
@@ -59,10 +62,10 @@
   font-size: 22px;
   background: var(--backgroundColorSecundario);
   /* filter: invert(1); */
+}
 
-  fa-icon {
-    color: var(--colorPrincipal);
-  }
+.container ul li .icon fa-icon {
+  color: var(--colorPrincipal);
 }
 
 .container ul li article {

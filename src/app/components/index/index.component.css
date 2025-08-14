@@ -167,9 +167,9 @@ footer p a {
     padding: 10px 0;
     flex-direction: column;
     gap: 5px;
+  }
 
-    p {
-      font-size: 0.8em;
-    }
+  section footer p {
+    font-size: 0.8em;
   }
 }
