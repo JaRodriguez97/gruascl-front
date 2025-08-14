@@ -253,6 +253,7 @@ src/
 - [ ] Minificar CSS/JS en producción
 - [ ] Implementar service workers básicos
 - [ ] Optimizar bundle sizes
+- [ ] cambiar la url base repetida en las imagenes, por variables de entorno segun corresponda
 
 ### **FASE 4: EXPERIENCIA AVANZADA (Prioridad BAJA) - 2-3 días**
 

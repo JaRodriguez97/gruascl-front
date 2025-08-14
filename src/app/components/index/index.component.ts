@@ -10,18 +10,7 @@ import {
 
 declare function gtag_report_conversion(url?: string): boolean;
 
-// Optimización FID - Declara tipos para requestIdleCallback
-declare global {
-  interface Window {
-    requestIdleCallback?: (callback: (deadline: IdleDeadline) => void, options?: { timeout?: number }) => number;
-    cancelIdleCallback?: (handle: number) => void;
-  }
-}
-
-interface IdleDeadline {
-  didTimeout: boolean;
-  timeRemaining(): number;
-}
+// Optimización FID - usar tipos nativos de TypeScript
 
 @Component({
   selector: 'app-index',
@@ -73,7 +62,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
   private scheduleNonCriticalTasks() {
     // Usar requestIdleCallback para tareas no críticas o fallback con setTimeout
-    const idleCallback = (deadline: IdleDeadline) => {
+    const idleCallback = (deadline: any) => {
       // Tareas no críticas durante tiempo libre
       if (deadline.timeRemaining() > 0 || deadline.didTimeout) {
         // Precargar analytics de forma diferida
@@ -81,8 +70,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
       }
     };
 
-    if (window.requestIdleCallback) {
-      window.requestIdleCallback(idleCallback, { timeout: 2000 });
+    if ((window as any).requestIdleCallback) {
+      (window as any).requestIdleCallback(idleCallback, { timeout: 2000 });
     } else {
       // Fallback para navegadores que no soportan requestIdleCallback
       setTimeout(() => idleCallback({ timeRemaining: () => 50, didTimeout: true }), 1);

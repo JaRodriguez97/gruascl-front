@@ -29,7 +29,7 @@ section .imgBx .cover {
   max-height: fit-content;
   border-radius: 50%;
   /* Prevenir CLS - reservar espacio para imagen crítica */
-  aspect-ratio: 330 / 400;
+  aspect-ratio: 1 / 1;
   width: 100%;
   max-width: 330px;
   height: auto;
