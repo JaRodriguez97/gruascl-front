@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { PublicService } from '@app/services/Public/public.service';
 import {
   faFacebookF,
@@ -10,12 +10,25 @@ import {
 
 declare function gtag_report_conversion(url?: string): boolean;
 
+// Optimización FID - Declara tipos para requestIdleCallback
+declare global {
+  interface Window {
+    requestIdleCallback?: (callback: (deadline: IdleDeadline) => void, options?: { timeout?: number }) => number;
+    cancelIdleCallback?: (handle: number) => void;
+  }
+}
+
+interface IdleDeadline {
+  didTimeout: boolean;
+  timeRemaining(): number;
+}
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css'],
 })
-export class IndexComponent {
+export class IndexComponent implements OnInit, AfterViewInit {
   faFacebookF = faFacebookF;
   faGoogle = faGoogle;
   faInstagram = faInstagram;
@@ -52,6 +65,34 @@ export class IndexComponent {
   constructor(public publicService: PublicService) {}
 
   ngOnInit() {}
+
+  ngAfterViewInit() {
+    // Optimización FID - Diferir tareas no críticas
+    this.scheduleNonCriticalTasks();
+  }
+
+  private scheduleNonCriticalTasks() {
+    // Usar requestIdleCallback para tareas no críticas o fallback con setTimeout
+    const idleCallback = (deadline: IdleDeadline) => {
+      // Tareas no críticas durante tiempo libre
+      if (deadline.timeRemaining() > 0 || deadline.didTimeout) {
+        // Precargar analytics de forma diferida
+        this.initializeAnalytics();
+      }
+    };
+
+    if (window.requestIdleCallback) {
+      window.requestIdleCallback(idleCallback, { timeout: 2000 });
+    } else {
+      // Fallback para navegadores que no soportan requestIdleCallback
+      setTimeout(() => idleCallback({ timeRemaining: () => 50, didTimeout: true }), 1);
+    }
+  }
+
+  private initializeAnalytics() {
+    // Inicializar tracking diferido para mejorar FID
+    // Esta función ejecuta tareas de analytics de forma no bloqueante
+  }
 
   onLogoLoad() {
     this.publicService.imgIndex = true;

@@ -173,7 +173,88 @@
       }
     </script>
 
+    <!-- === PRELOAD RECURSOS CRÍTICOS === -->
+    <!-- Preload imagen de fondo crítica para LCP -->
+    <link rel="preload" as="image" href="./assets/images/bg.webp" />
+    <!-- Preload logo principal -->
+    <link rel="preload" as="image" href="./assets/icons/logoGruasTransparente.webp" />
+    
+    <!-- === DNS PREFETCH OPTIMIZADO === -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    
+    <!-- === ESTILOS CRÍTICOS INLINE PARA LCP === -->
+    <style>
+      /* Reset crítico */
+      * { box-sizing: border-box; }
+      body, html { margin: 0; padding: 0; min-height: 100vh; }
+      
+      /* Layout crítico del índice - clases reales */
+      .adjust {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+        padding: 100px;
+        justify-content: space-between;
+      }
+      
+      /* Container de imagen crítico */
+      .imgBx {
+        position: relative;
+        min-width: 50%;
+        height: 100%;
+        max-height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      /* Logo crítico con dimensiones fijas para evitar CLS */
+      .cover {
+        width: 100%;
+        max-width: 330px;
+        height: auto;
+        aspect-ratio: 330 / 400;
+        border-radius: 50%;
+        display: block;
+      }
+      
+      /* Contenido principal crítico */
+      main {
+        max-width: 700px;
+        margin-left: 40px;
+        display: grid;
+        gap: 20px;
+      }
+      
+      /* Título H1 crítico */
+      main h1 {
+        font-size: 3em;
+        margin: 0;
+        font-weight: bolder;
+        letter-spacing: 1px;
+      }
+      
+      /* Responsive crítico */
+      @media (max-width: 991px) {
+        .adjust {
+          flex-direction: column;
+          padding: 40px;
+        }
+        .imgBx {
+          min-width: 50%;
+          margin-top: 50px;
+        }
+        main {
+          margin-left: 0;
+          max-width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+    
     <link
       rel="apple-touch-icon"
       type="image/x-icon"

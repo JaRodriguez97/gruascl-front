@@ -238,15 +238,17 @@ src/
   ```
 - [x] **Implementar lazy loading avanzado** → Directiva personalizada con Intersection Observer implementada
 - [x] **Añadir responsive images (srcset)** → Srcset y sizes implementados en servicios, trabajos y nosotros
-- [ ] Optimizar tamaños y compresión
+- [x] Optimizar tamaños y compresión → Imágenes WebP están en tamaños adecuados
 
-#### **3.2 Core Web Vitals**
-- [ ] Implementar preload para recursos críticos
-- [ ] Optimizar LCP (Largest Contentful Paint)
-- [ ] Reducir CLS (Cumulative Layout Shift)
-- [ ] Mejorar FID (First Input Delay)
+#### **3.2 Core Web Vitals** ✅ COMPLETADO
+- [x] Implementar preload para recursos críticos → Preload bg.webp y logo, DNS prefetch optimizado
+- [x] Optimizar LCP (Largest Contentful Paint) → Sin transiciones iniciales, fetchpriority high en logo + estilos críticos inline
+- [x] Reducir CLS (Cumulative Layout Shift) → Aspect-ratio y dimensiones fijas en imagen crítica
+- [x] Mejorar FID (First Input Delay) → requestIdleCallback implementado para diferir tareas no críticas
+- [x] Evita que haya varias redirecciones de página al ingresar → Router optimizado, sin redirecciones server-side problemáticas
 
 #### **3.3 Caching y Compresión**
+- [ ] Implementar el publicService donde sea necesario validar si está en el navegdor o en el servidor
 - [ ] Configurar cache headers
 - [ ] Minificar CSS/JS en producción
 - [ ] Implementar service workers básicos

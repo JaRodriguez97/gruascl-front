@@ -175,7 +175,7 @@ header.sticky ul li a:hover {
   .toggle {
     width: 40px;
     height: 40px;
-    background-image: url("https://gruascl.com/assets/images/menu.png");
+    background-image: url("https://gruascl.com/assets/images/menu.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 30px;
@@ -183,7 +183,7 @@ header.sticky ul li a:hover {
   }
 
   .toggle.active {
-    background-image: url("https://gruascl.com/assets/images/close.png");
+    background-image: url("https://gruascl.com/assets/images/close.webp");
   }
 }
 

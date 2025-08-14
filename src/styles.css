@@ -32,6 +32,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--fontFamily);
+}
+
+/* Transiciones solo después de carga para mejorar LCP */
+.loaded * {
   transition: 500ms;
   transition-delay: 0ms;
 }

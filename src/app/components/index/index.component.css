@@ -28,6 +28,12 @@ section .imgBx .cover {
   position: relative;
   max-height: fit-content;
   border-radius: 50%;
+  /* Prevenir CLS - reservar espacio para imagen crítica */
+  aspect-ratio: 330 / 400;
+  width: 100%;
+  max-width: 330px;
+  height: auto;
+  display: block;
 }
 
 section main {
