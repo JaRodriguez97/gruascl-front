@@ -10,6 +10,7 @@ import { ServiciosComponent } from '@components/servicios/servicios.component';
 import { TestimoniosComponent } from '@components/testimonios/testimonios.component';
 import { TrabajosComponent } from '@components/trabajos/trabajos.component';
 
+import { LazyLoadingDirective } from '../../directives/lazy-loading.directive';
 import { LandingRoutingModule } from './landing-routing.module';
 import { LandingComponent } from './landing.component';
 
@@ -22,6 +23,7 @@ import { LandingComponent } from './landing.component';
     ServiciosComponent,
     TestimoniosComponent,
     TrabajosComponent,
+    LazyLoadingDirective,
   ],
   imports: [
     FormsModule,

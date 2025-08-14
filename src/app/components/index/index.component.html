@@ -3,8 +3,8 @@
     <img
       src="../../../assets/icons/logoGruasTransparente.webp"
       class="cover"
-      alt="Logo Grúas CL - Servicio de grúa"
-      title="Logo Grúas CL - Servicio de grúa"
+      alt="Gruas Cali - Grúas CL Logo Servicio de Grua 24 Horas"
+      title="Gruas Cali - Grúas CL Servicio de Grua Economico"
       loading="lazy"
       width="330"
       height="400"
@@ -23,15 +23,9 @@
   </div>
 
   <main>
-    <h1>Servicio de Grúas CL.</h1>
+    <h1>Gruas Cali - Servicio de Grúa 24 Horas</h1>
     <p>
-      Ofrecemos <strong>servicio de grúa las 24 horas</strong> con rapidez,
-      excelencia y precios económicos. Contamos con
-      <strong>grúas en Cali</strong> para trasladar vehículos livianos,
-      medianos, pesados, maquinaria e incluso <strong>grúa para moto</strong>.
-      Si buscas grúas cerca de mí, estamos listos para atenderte. Hacemos viajes
-      dentro de Cali y traslados entre Cali y cualquier municipio de Colombia,
-      <strong>no operamos de manera local en otras ciudades</strong> .
+      Somos <strong>Grúas CL</strong>, empresa líder de <strong>gruas Cali</strong> especializada en <strong>servicio de grua 24 horas</strong> con precios económicos y atención inmediata. Nuestro <strong>servicio de grúa cerca</strong> cubre toda la ciudad de Cali para vehículos livianos, medianos, pesados y motocicletas. <strong>Grua 24 horas Cali</strong> disponible para traslados locales y hacia cualquier municipio de Colombia. <strong>Grua economica Cali</strong> con la mejor relación calidad-precio del mercado.
     </p>
     <div *ngIf="publicService.imgIndex" class="btnBox">
       <a
@@ -42,7 +36,7 @@
         title="Reservar Servicio Grúa Cali 24 horas | Grúas CL"
         (click)="sendClick('Wh - Index')"
       >
-        Reservar Grúa
+        Cotizar Gratis Ahora
         <fa-icon
           [icon]="faWhatsapp"
           aria-label="hidden"
@@ -57,48 +51,22 @@
         title="Servicio Grúa Urgente Cali 24 horas | Grúas CL"
         (click)="sendClick('Tel - Index')"
       >
-        Grúa Urgente
+        Llamar AHORA
       </a>
     </div>
   </main>
 
   <footer *ngIf="publicService.imgIndex">
     <ul>
-      <li>
+      <li *ngFor="let social of socialNetworks">
         <a
-          target="_blank"
-          href="https://www.facebook.com/share/oNzGDHMsg9DL1bfg/?mibextid=qi2Omg"
-          title="Facebook - Grúas CL - Servicio Grúas"
+          [href]="social.href"
+          [target]="social.target"
+          [title]="social.title"
+          (click)="social.target ? null : toogleMenu()"
         >
-          <fa-icon [icon]="faFacebookF"></fa-icon
-        ></a>
-      </li>
-      <li>
-        <a
-          (click)="toogleMenu()"
-          href="servicio-grua-cali-economicas-24-horas#contacto"
-          title="Contacto - Grúas CL - Servicio Grúas"
-        >
-          <fa-icon [icon]="faGoogle"></fa-icon
-        ></a>
-      </li>
-      <li>
-        <a
-          target="_blank"
-          href="https://instagram.com/gruascl247?utm_source=qr"
-          title="Instagram - Grúas CL - Servicio Grúas"
-        >
-          <fa-icon [icon]="faInstagram"></fa-icon
-        ></a>
-      </li>
-      <li>
-        <a
-          target="_blank"
-          href="https://vm.tiktok.com/ZMMY9RUkn/"
-          title="Tik Tok - Grúas CL - Servicio Grúas"
-        >
-          <fa-icon [icon]="faTiktok"></fa-icon
-        ></a>
+          <fa-icon [icon]="social.icon"></fa-icon>
+        </a>
       </li>
     </ul>
     <p>

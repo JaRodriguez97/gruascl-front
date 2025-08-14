@@ -7,50 +7,13 @@
     [ngClass]="{ active: publicService.menuToggle, toggle: true }"
     (click)="toogleMenu()"
   ></div>
-  <ul [ngClass]="{ menu: true, active: publicService.menu }">
-    <li>
-      <a
-        href="servicio-grua-cali-economicas-24-horas#inicio"
-        (click)="toogleMenu()"
-        >Inicio</a
-      >
-    </li>
-    <li>
-      <a
-        href="servicio-grua-cali-economicas-24-horas#nosotros"
-        (click)="toogleMenu()"
-        >Nosotros</a
-      >
-    </li>
-    <li>
-      <a
-        href="servicio-grua-cali-economicas-24-horas#servicios"
-        (click)="toogleMenu()"
-        >Servicios</a
-      >
-    </li>
-    <li>
-      <a
-        href="servicio-grua-cali-economicas-24-horas#trabajos"
-        (click)="toogleMenu()"
-        >Trabajos</a
-      >
-    </li>
-    <li>
-      <a
-        href="servicio-grua-cali-economicas-24-horas#testimonios"
-        (click)="toogleMenu()"
-        >Reseñas</a
-      >
-    </li>
-    <li>
-      <a
-        href="servicio-grua-cali-economicas-24-horas#contacto"
-        (click)="toogleMenu()"
-        >Contáctanos</a
-      >
-    </li>
-  </ul>
+  <nav aria-label="Navegación principal Gruas Cali" role="navigation">
+    <ul [ngClass]="{ menu: true, active: publicService.menu }">
+      <li *ngFor="let item of menuItems">
+        <a [href]="'grua-cali#' + item.href" (click)="toogleMenu()" [attr.aria-label]="item.ariaLabel">{{ item.label }}</a>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <!-- BTN WhatsApp BTN -->
@@ -62,11 +25,13 @@
     href="https://wa.me/+573215325109"
     target="_blank"
     title="WhatsApp - Grúas CL - Servicio Grúas"
+    aria-label="Contactar por WhatsApp gruas Cali servicio 24 horas"
+    role="button"
     (click)="sendClick('Wh - Landing')"
     >Escribenos
     <fa-icon
       [icon]="faWhatsapp"
-      aria-label="hidden"
+      aria-hidden="true"
       style="font-size: 2em"
     ></fa-icon>
   </a>
@@ -76,6 +41,8 @@
     class="emergency"
     alt="Servicio Grúa Urgente Cali 24 horas | Grúas CL"
     title="Servicio Grúa Urgente Cali 24 horas | Grúas CL"
+    aria-label="Llamar ahora gruas Cali servicio urgente 24 horas"
+    role="button"
     (click)="sendClick('Tel - Landing')"
     >Llámanos
   </a>

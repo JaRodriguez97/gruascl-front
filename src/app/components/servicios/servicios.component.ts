@@ -8,61 +8,61 @@ import { PublicService } from '@services/Public/public.service';
 })
 export class ServiciosComponent {
   servicios: {
-    src: string;
     alt: string;
     title: string;
     titulo: string;
     parrafo: string;
   }[] = [
     {
-      src: 'https://gruascl.com/assets/servicioImg/servicio01.webp',
-      alt: 'servicio01 - Servicio grúa',
-      title: 'servicio01 - Servicio grúa',
-      titulo: 'Servicios Livianos',
+      alt: 'Grua para carros Cali - Servicio de grua economico vehiculos livianos',
+      title: 'Gruas Cali vehiculos livianos - Servicio grua economico',
+      titulo: 'Grua para Carros - Vehículos Livianos',
       parrafo:
-        'Disponemos maquinaria de calidad y ofrecemos los precios más competitivos para brindar una asistencia y eficiente en todos los servicios solicitados.',
+        'Nuestro <strong>servicio de grua para carros</strong> en Cali incluye vehículos livianos con <strong>grua economica</strong> disponible 24 horas. Atención rápida y precios competitivos.',
     },
     {
-      src: 'https://gruascl.com/assets/servicioImg/servicio02.webp',
-      alt: 'servicio02 - Servicio grúa',
-      title: 'servicio02 - Servicio grúa',
-      titulo: 'Servicios medianos',
+      alt: 'Grua 24 horas Cali vehiculos medianos - Servicio de grua cerca',
+      title: 'Gruas Cali 24 horas vehiculos medianos - Atencion inmediata',
+      titulo: 'Grua 24 Horas - Vehículos Medianos',
       parrafo:
-        'Nuestros técnicos altamente capacitados y cualificados están disponibles para proporcionarte la experiencia en y que solo <span>Grúas CL.</span> puede ofrecer.',
+        'Con <strong>grua 24 horas Cali</strong> atendemos vehículos medianos con técnicos especializados. <strong>Servicio de grua cerca</strong> con la experiencia que solo <span>Grúas CL</span> puede ofrecer.',
     },
     {
-      src: 'https://gruascl.com/assets/servicioImg/servicio03.jpg',
-      alt: 'servicio03 - Servicio grúa',
-      title: 'servicio03 - Servicio grúa',
-      titulo: 'Servicios grandes',
+      alt: 'Traslado vehiculos Cali pesados - Gruas Cali camiones gran tonelaje',
+      title: 'Servicio grua Cali vehiculos pesados - Traslado especializado',
+      titulo: 'Traslado de Vehículos Pesados',
       parrafo:
-        'Nuestra posición líder en el mercado se debe a nuestra constante responsabilidad y compromiso con la satisfacción de nuestros clientes.',
+        '<strong>Traslado vehiculos Cali</strong> pesados con <strong>gruas Cali</strong> especializadas. Líderes en <strong>servicio de grua</strong> para camiones y vehículos de gran tonelaje.',
     },
     {
-      src: 'https://gruascl.com/assets/servicioImg/servicio04.jpg',
-      alt: 'servicio04 - Servicio grúa',
-      title: 'servicio04 - Servicio grúa',
-      titulo: 'Servicio para maquinaria',
+      alt: 'Grua para maquinaria pesada Cali - Traslado vehiculos equipos industriales',
+      title:
+        'Gruas Cali maquinaria pesada - Grua economica equipos industriales',
+      titulo: 'Grua para Maquinaria Pesada',
       parrafo:
-        'Somos aliados de tu tiempo y tú economía. En <span>Grúas CL</span>, aseguramos el transporte para su maquinaria contratiempos. Logrando tiempos en entrega increibles además del gran servicio con maquinas pesadas.',
+        '<strong>Traslado vehiculos Cali</strong> especializados en maquinaria pesada. En <span>Grúas CL</span> aseguramos transporte seguro con <strong>grua economica Cali</strong> para equipos industriales.',
     },
     {
-      src: 'https://gruascl.com/assets/servicioImg/servicio05.jpg',
-      alt: 'servicio05 - Servicio grúa',
-      title: 'servicio05 - Servicio grúa',
-      titulo: 'Servicio grúa telescópica',
+      alt: 'Grua telescopica Cali alturas - Servicio grua construccion montajes industriales',
+      title:
+        'Gruas Cali telescopica trabajos altura - Servicio grua economico construccion',
+      titulo: 'Grua Telescópica - Alturas',
       parrafo:
-        'Disponemos con una extensa variedad de maquinaria económica a tu disposición, lista para ofrecerte soluciones y precisas que se adapten a tus necesidades específicas.',
+        '<strong>Gruas Cali</strong> especializadas en trabajos de altura con grúa telescópica. <strong>Servicio de grua</strong> económico para construcción y montajes industriales.',
     },
     {
-      src: 'https://gruascl.com/assets/servicioImg/servicio06.jpg',
-      alt: 'servicio06 - Servicio grúa',
-      title: 'servicio06 - Servicio grúa',
-      titulo: 'Servicio rescate',
+      alt: 'Grua urgente Cali rescate vehicular - Servicio grua cerca emergencias 24 horas',
+      title:
+        'Rescate vehicular urgente Cali - Grua urgente emergencias 24 horas',
+      titulo: 'Rescate Vehicular Urgente',
       parrafo:
-        'En nuestro equipo, contamos con profesionales altamente capacitados y la maquinaria especializada necesaria para abordar con éxito cualquier situación de rescate que se presente.',
+        '<strong>Grua urgente Cali</strong> para situaciones de emergencia. <strong>Servicio de grua cerca</strong> con profesionales especializados en <strong>rescate vehicular</strong> las 24 horas.',
     },
   ];
 
   constructor(public publicService: PublicService) {}
+
+  setSrc(i: number) {
+    return `https://gruascl.com/assets/servicioImg/servicio0${i + 1}.webp`;
+  }
 }

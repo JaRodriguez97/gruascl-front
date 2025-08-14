@@ -1,16 +1,18 @@
 <section class="adjust" *ngIf="publicService.trabajos">
   <div class="title">
-    <h2>Trabajos Recientes</h2>
+    <h2>Trabajos de Gruas Cali - Portafolio</h2>
     <p>
       Contamos con un extenso historial en proyectos exitosos llevados a cabo.
     </p>
   </div>
 
   <ul>
-    <li *ngFor="let t of trabajos">
+    <li *ngFor="let t of trabajos; let i = index">
       <div class="imgBx">
         <img
-          [src]="t.src"
+          [appLazyLoading]="setSrc(i)"
+          [srcset]="setSrc(i) + ' 500w'"
+          sizes="(max-width: 480px) 250px, (max-width: 768px) 500px, 1000px"
           [alt]="t.alt"
           [title]="t.title"
           loading="lazy"
@@ -24,11 +26,7 @@
     </li>
   </ul>
 
-  <button
-    (click)="onPushImage()"
-    class="btn"
-    *ngIf="btnVisibillity"
-  >
+  <button (click)="onPushImage()" class="btn" *ngIf="btnVisibillity">
     Ver Más
   </button>
 </section>

@@ -1,24 +1,31 @@
 <section class="nosotros adjust" *ngIf="publicService.imgIndex">
   <div class="title">
-    <h2>Acerca De Nosotros</h2>
+    <h2>Acerca de Nuestras Gruas en Cali</h2>
   </div>
   <div class="content">
     <div class="textBox" *ngIf="publicService.imgNosotros">
       <p>
-        <span>Grúas CL</span> nació para ofrecer un
-        <strong> servicio de grúa </strong>
-        rápido, seguro y económico las 24 horas a quienes necesitan trasladar su
-        vehículo con respaldo y confianza. Contamos con
-        <strong>grúas en Cali</strong>, priorizamos el tiempo y economía de
-        nuestros clientes, realizando viajes dentro de Cali y traslados entre
-        Cali y cualquier municipio de Colombia, sin operar de manera local en
-        otras ciudades.
+        <span>Grúas CL</span> es la empresa líder de
+        <strong>gruas Cali</strong> con años de experiencia ofreciendo
+        <strong>servicio de grua 24 horas</strong> rápido, seguro y económico.
+        Nuestro <strong>servicio de grúa cerca</strong> atiende todos los
+        sectores de Cali: Norte, Sur, Centro, Oeste y Valle del Lili. Como
+        <strong>grua economica Cali</strong> priorizamos el tiempo y presupuesto
+        de nuestros clientes, realizando
+        <strong>traslado de vehículos</strong> dentro de Cali y hacia cualquier
+        municipio de Colombia.
       </p>
     </div>
 
     <div class="imgBx">
       <img
         src="https://gruascl.com/assets/images/nosotros.webp"
+        srcset="
+          https://gruascl.com/assets/images/nosotros.webp    300w,
+          https://gruascl.com/assets/images/nosotros.webp 150w,
+          https://gruascl.com/assets/images/nosotros.webp 600w
+        "
+        sizes="(max-width: 480px) 150px, (max-width: 768px) 300px, 600px"
         alt="Logo Grúas CL - Servicio grúa"
         title="Logo Grúas CL - Servicio grúa"
         loading="lazy"

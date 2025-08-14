@@ -3,14 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'servicio-grua-cali-economicas-24-horas',
+    path: 'grua-cali',
     loadChildren: () =>
       import('./modules/Landing/landing.module').then((m) => m.LandingModule),
     title: 'Servicio Grúa Cali Economicas 24 Horas - Grúas CL',
   },
   {
     path: '**',
-    redirectTo: 'servicio-grua-cali-economicas-24-horas',
+    redirectTo: 'grua-cali',
   },
 ];
 

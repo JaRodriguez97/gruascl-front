@@ -1,6 +1,6 @@
 <section class="services adjust" *ngIf="publicService.servicios">
   <div class="title">
-    <h2>Servicios Que Ofrecemos</h2>
+    <h2>Servicio de Grua en Cali - Todos los Tipos</h2>
     <p>
       Dado que nuestra base está en Cali, ofrecemos servicios en la ciudad y
       traslados a nivel nacional, sin cobertura local en otros municipios.
@@ -8,9 +8,11 @@
   </div>
 
   <ul>
-    <li *ngFor="let s of servicios">
+    <li *ngFor="let s of servicios; let i = index">
       <img
-        [src]="s.src"
+        [appLazyLoading]="setSrc(i)"
+        [srcset]="setSrc(i) + ' 340w'"
+        sizes="(max-width: 480px) 170px, (max-width: 768px) 340px, 680px"
         [alt]="s.alt"
         [title]="s.title"
         loading="lazy"

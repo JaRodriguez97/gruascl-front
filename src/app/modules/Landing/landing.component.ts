@@ -10,6 +10,15 @@ import { PublicService } from '@services/Public/public.service';
 export class LandingComponent implements OnInit {
   faWhatsapp = faWhatsapp;
 
+  menuItems = [
+    { href: 'inicio', label: 'Inicio', ariaLabel: 'Ir a sección inicio' },
+    { href: 'nosotros', label: 'Nosotros', ariaLabel: 'Ir a sección nosotros' },
+    { href: 'servicios', label: 'Servicios', ariaLabel: 'Ver servicios de grua' },
+    { href: 'trabajos', label: 'Trabajos', ariaLabel: 'Ver trabajos realizados' },
+    { href: 'testimonios', label: 'Reseñas', ariaLabel: 'Ver reseñas de clientes' },
+    { href: 'contacto', label: 'Contáctanos', ariaLabel: 'Contactar gruas Cali' }
+  ];
+
   constructor(public publicService: PublicService) {}
 
   ngOnInit() {}

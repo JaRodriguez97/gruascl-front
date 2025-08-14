@@ -15,12 +15,39 @@ declare function gtag_report_conversion(url?: string): boolean;
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css'],
 })
-export class IndexComponent implements OnInit {
+export class IndexComponent {
   faFacebookF = faFacebookF;
-  faInstagram = faInstagram;
   faGoogle = faGoogle;
+  faInstagram = faInstagram;
   faTiktok = faTiktok;
   faWhatsapp = faWhatsapp;
+
+  socialNetworks = [
+    {
+      icon: faFacebookF,
+      href: 'https://www.facebook.com/share/oNzGDHMsg9DL1bfg/?mibextid=qi2Omg',
+      title: 'Facebook - Grúas CL - Servicio Grúas',
+      target: '_blank'
+    },
+    {
+      icon: faGoogle,
+      href: 'grua-cali#contacto',
+      title: 'Contacto - Grúas CL - Servicio Grúas',
+      target: null
+    },
+    {
+      icon: faInstagram,
+      href: 'https://instagram.com/gruascl247?utm_source=qr',
+      title: 'Instagram - Grúas CL - Servicio Grúas',
+      target: '_blank'
+    },
+    {
+      icon: faTiktok,
+      href: 'https://vm.tiktok.com/ZMMY9RUkn/',
+      title: 'Tik Tok - Grúas CL - Servicio Grúas',
+      target: '_blank'
+    }
+  ];
 
   constructor(public publicService: PublicService) {}
 
