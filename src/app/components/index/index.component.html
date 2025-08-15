@@ -3,6 +3,8 @@
     <img
       src="https://gruascl.com/assets/icons/logoGruasTransparente.webp"
       class="cover"
+      [appSkeletonLoader]="true"
+      skeletonType="image"
       alt="Gruas Cali - Grúas CL Logo Servicio de Grua 24 Horas"
       title="Gruas Cali - Grúas CL Servicio de Grua Economico"
       fetchpriority="high"
@@ -58,12 +60,7 @@
   <footer *ngIf="publicService.imgIndex">
     <ul>
       <li *ngFor="let social of socialNetworks">
-        <a
-          [href]="social.href"
-          [target]="social.target"
-          [title]="social.title"
-          (click)="social.target ? null : toogleMenu()"
-        >
+        <a [href]="social.href" target="_blank" [title]="social.title">
           <fa-icon [icon]="social.icon"></fa-icon>
         </a>
       </li>

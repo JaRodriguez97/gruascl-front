@@ -5,21 +5,24 @@
   <div class="content">
     <div class="textBox" *ngIf="publicService.imgNosotros">
       <p>
-        <span>Grúas CL</span> es la empresa líder de
-        <strong>gruas Cali</strong> con años de experiencia ofreciendo
-        <strong>servicio de grua 24 horas</strong> rápido, seguro y económico.
-        Nuestro <strong>servicio de grúa cerca</strong> atiende todos los
-        sectores de Cali: Norte, Sur, Centro, Oeste y Valle del Lili. Como
-        <strong>grua economica Cali</strong> priorizamos el tiempo y presupuesto
-        de nuestros clientes, realizando
-        <strong>traslado de vehículos</strong> dentro de Cali y hacia cualquier
-        municipio de Colombia.
+        Con años de trayectoria, <span>Grúas CL</span> se ha consolidado como referente en
+        <strong>gruas Cali</strong> atendiendo emergencias vehiculares las 24 horas del día.
+        Nuestra cobertura estratégica abarca los principales sectores y comunas de la ciudad:
+        <strong>Norte</strong> (El País, Ciudad Jardín, Versalles), <strong>Sur</strong> (San Antonio, El Poblado, Terrón Colorado),
+        <strong>Centro</strong> (Granada, San Nicolás, Santa Rosa), <strong>Oriente</strong> (Alfonso López, Mariano Ramos)
+        y <strong>Occidente</strong> (Normandía, Ciudad Córdoba). Como empresa especializada en
+        <strong>servicio de grua 24 horas</strong> y <strong>grua economica Cali</strong>, garantizamos
+        respuesta inmediata y tarifas competitivas para el <strong>traslado de vehículos</strong>
+        desde Cali hacia destinos como Palmira, Jamundí, Yumbo, Candelaria, Buenaventura
+        o cualquier ciudad de Colombia.
       </p>
     </div>
 
     <div class="imgBx">
       <img
         src="https://gruascl.com/assets/images/nosotros.webp"
+        [appSkeletonLoader]="true"
+        skeletonType="image"
         srcset="
           https://gruascl.com/assets/images/nosotros.webp    300w,
           https://gruascl.com/assets/images/nosotros.webp 150w,

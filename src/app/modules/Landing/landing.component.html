@@ -7,10 +7,19 @@
     [ngClass]="{ active: publicService.menuToggle, toggle: true }"
     (click)="toogleMenu()"
   ></div>
-  <nav aria-label="Navegación principal Gruas Cali" role="navigation">
-    <ul [ngClass]="{ menu: true, active: publicService.menu }">
+  <nav
+    [ngClass]="{ active: publicService.menu }"
+    aria-label="Navegación principal Gruas Cali"
+    role="navigation"
+  >
+    <ul class="menu">
       <li *ngFor="let item of menuItems">
-        <a [href]="'grua-cali#' + item.href" (click)="toogleMenu()" [attr.aria-label]="item.ariaLabel">{{ item.label }}</a>
+        <a
+          [href]="'grua-cali#' + item.href"
+          (click)="toogleMenu()"
+          [attr.aria-label]="item.ariaLabel"
+          >{{ item.label }}</a
+        >
       </li>
     </ul>
   </nav>
@@ -51,7 +60,43 @@
 
 <app-index id="inicio"></app-index>
 <app-nosotros id="nosotros"></app-nosotros>
-<app-servicios id="servicios"></app-servicios>
-<app-trabajos id="trabajos"></app-trabajos>
-<app-testimonios id="testimonios"></app-testimonios>
-<app-contactanos id="contacto"></app-contactanos>
+
+<!-- Servicios con lazy loading optimizado -->
+<div 
+  id="servicios" 
+  appScrollAnimation="none" 
+  [enableLazySection]="true" 
+  sectionName="servicios"
+>
+  <app-servicios *ngIf="publicService.servicios"></app-servicios>
+</div>
+
+<!-- Trabajos con lazy loading optimizado -->
+<div 
+  id="trabajos" 
+  appScrollAnimation="none" 
+  [enableLazySection]="true" 
+  sectionName="trabajos"
+>
+  <app-trabajos *ngIf="publicService.trabajos"></app-trabajos>
+</div>
+
+<!-- Testimonios con lazy loading optimizado -->
+<div 
+  id="testimonios" 
+  appScrollAnimation="none" 
+  [enableLazySection]="true" 
+  sectionName="testimonios"
+>
+  <app-testimonios *ngIf="publicService.testimonios"></app-testimonios>
+</div>
+
+<!-- Contacto con lazy loading optimizado -->
+<div 
+  id="contacto" 
+  appScrollAnimation="none" 
+  [enableLazySection]="true" 
+  sectionName="contactImg"
+>
+  <app-contactanos *ngIf="publicService.contactImg"></app-contactanos>
+</div>

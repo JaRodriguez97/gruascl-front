@@ -71,12 +71,13 @@ section main .btnBox a.emergency::after {
 }
 
 section main h1 {
-  letter-spacing: 1px;
-  margin: 0;
-  font-weight: bolder;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px 0;
+  font-weight: 700;
   color: var(--colorPrincipal);
-  font-size: 3em;
-  -webkit-text-stroke: 0.3px #00000085;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 section main p {

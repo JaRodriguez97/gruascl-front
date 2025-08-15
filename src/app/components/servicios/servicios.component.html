@@ -1,4 +1,4 @@
-<section class="services adjust" *ngIf="publicService.servicios">
+<section class="services adjust">
   <div class="title">
     <h2>Servicio de Grua en Cali - Todos los Tipos</h2>
     <p>
@@ -11,6 +11,8 @@
     <li *ngFor="let s of servicios; let i = index">
       <img
         [appLazyLoading]="setSrc(i)"
+        [appSkeletonLoader]="true"
+        skeletonType="image"
         [srcset]="setSrc(i) + ' 340w'"
         sizes="(max-width: 480px) 170px, (max-width: 768px) 340px, 680px"
         [alt]="s.alt"
@@ -19,8 +21,8 @@
         width="340"
         height="200"
       />
-      <h3>{{ s.titulo }}</h3>
-      <p [innerHTML]="s.parrafo"></p>
+      <h3 [appSkeletonLoader]="true" skeletonType="text" [skeletonLines]="1">{{ s.titulo }}</h3>
+      <p [innerHTML]="s.parrafo" [appSkeletonLoader]="true" skeletonType="text" [skeletonLines]="3"></p>
     </li>
   </ul>
 </section>

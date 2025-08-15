@@ -11,6 +11,8 @@ import { TestimoniosComponent } from '@components/testimonios/testimonios.compon
 import { TrabajosComponent } from '@components/trabajos/trabajos.component';
 
 import { LazyLoadingDirective } from '../../directives/lazy-loading.directive';
+import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
+import { SkeletonLoaderDirective } from '../../directives/skeleton-loader.directive';
 import { LandingRoutingModule } from './landing-routing.module';
 import { LandingComponent } from './landing.component';
 
@@ -24,6 +26,8 @@ import { LandingComponent } from './landing.component';
     TestimoniosComponent,
     TrabajosComponent,
     LazyLoadingDirective,
+    ScrollAnimationDirective,
+    SkeletonLoaderDirective,
   ],
   imports: [
     FormsModule,

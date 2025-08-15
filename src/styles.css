@@ -4,6 +4,8 @@
   color-scheme: light dark;
 
   --colorPrincipal: #a84785;
+  --colorPrincipalHover: #c55a9b;
+  --colorPrincipalDark: #8a3a6d;
 
   /* --backgroundColorPrincipal: #fff; */
   --backgroundColorPrincipal: #000;
@@ -24,7 +26,16 @@
   --boxShadowclara: 2px 2px 1px -1px #fff3, 2px 1px 1px #00000024,
     0 1px 3px #ffffff10;
   --border: 1px solid rgba(255, 255, 255, 0.2);
+  --borderFocus: 2px solid var(--colorPrincipal);
   --fontFamily: Roboto, "Helvetica Neue", sans-serif;
+  
+  /* Spacing consistency */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
 }
 
 * {
@@ -102,16 +113,71 @@ section {
   letter-spacing: 1px;
   border: none;
   cursor: pointer;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(168, 71, 133, 0.3);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(168, 71, 133, 0.4);
+  letter-spacing: 2px;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  transition: transform 0.1s ease;
+}
+
+/* === TYPOGRAPHY HIERARCHY === */
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 p {
   color: var(--letrasParrafosColor);
   text-wrap: pretty;
   margin: 0 !important;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
 }
 
 span {
   color: var(--colorPrincipal);
+  font-weight: 600;
 }
 
 .title {
@@ -202,11 +268,394 @@ a {
 
 @keyframes loading-shimmer {
   0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+/* === SKELETON LOADER STYLES === */
+.skeleton-loader {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-image {
+  border-radius: 8px;
+}
+
+.skeleton-card {
+  border-radius: 12px;
+}
+
+.skeleton-line {
+  height: 16px;
+  margin-bottom: 8px;
+  background: inherit;
+  border-radius: 4px;
+}
+
+.skeleton-line:last-child {
+  width: 60%; /* Última línea más corta para mayor realismo */
+  margin-bottom: 0;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
     background-position: -200% 0;
   }
   100% {
     background-position: 200% 0;
   }
+}
+
+/* Dark mode skeleton */
+@media (prefers-color-scheme: dark) {
+  .skeleton-loader {
+    background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+    background-size: 200% 100%;
+  }
+}
+
+/* === HOVER EFFECTS PARA IMÁGENES === */
+.image-hover-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.image-hover-container img {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-hover-container:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.image-hover-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(168, 71, 133, 0.1), rgba(168, 71, 133, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.image-hover-container:hover::after {
+  opacity: 1;
+}
+
+/* Hover effects específicos para servicios */
+.services li {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.services li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(168, 71, 133, 0.2);
+}
+
+.services li:hover h3 {
+  color: var(--colorPrincipal);
+  transform: scale(1.02);
+}
+
+/* Hover effects para portfolio */
+.trabajos li {
+  transition: all 0.3s ease;
+}
+
+.trabajos li:hover {
+  transform: translateY(-3px);
+}
+
+.trabajos li:hover .textBx span {
+  color: var(--colorPrincipal);
+  transform: translateX(5px);
+}
+
+/* === HOVER EFFECTS PARA ICONOS Y NAVEGACIÓN === */
+/* Iconos sociales */
+footer ul li a {
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-origin: center;
+}
+
+footer ul li a:hover {
+  transform: scale(1.3) rotate(360deg);
+  color: var(--colorPrincipal) !important;
+  text-shadow: 0 0 10px rgba(168, 71, 133, 0.5);
+}
+
+footer ul li a:hover fa-icon {
+  filter: drop-shadow(0 0 8px rgba(168, 71, 133, 0.6));
+}
+
+/* Navegación principal */
+nav ul li a {
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(168, 71, 133, 0.1);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+nav ul li a:hover {
+  color: var(--colorPrincipal) !important;
+  transform: translateY(-2px);
+  text-shadow: 0 2px 4px rgba(168, 71, 133, 0.3);
+}
+
+nav ul li a:hover::before {
+  left: 0;
+}
+
+/* Efectos para fa-icon generales */
+fa-icon {
+  transition: all 0.3s ease;
+}
+
+.btn:hover fa-icon {
+  transform: scale(1.1) translateX(3px);
+}
+
+/* Pulso para botones de contacto */
+.btn.emergency {
+  animation: subtle-pulse 2s infinite;
+}
+
+@keyframes subtle-pulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(168, 71, 133, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(168, 71, 133, 0.5);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(168, 71, 133, 0.3);
+  }
+}
+
+/* === SCROLL ANIMATIONS STYLES === */
+.scroll-animation {
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scroll-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Animación fadeInUp */
+.scroll-fadeInUp.scroll-hidden {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.scroll-fadeInUp.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación fadeInLeft */
+.scroll-fadeInLeft.scroll-hidden {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.scroll-fadeInLeft.scroll-visible {
+  opacity: 1;
+  transform: translateX(0);
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animación fadeInRight */
+.scroll-fadeInRight.scroll-hidden {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+.scroll-fadeInRight.scroll-visible {
+  opacity: 1;
+  transform: translateX(0);
+  animation: fadeInRight 0.6s ease-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animación scaleIn */
+.scroll-scaleIn.scroll-hidden {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.scroll-scaleIn.scroll-visible {
+  opacity: 1;
+  transform: scale(1);
+  animation: scaleIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animación slideInUp */
+.scroll-slideInUp.scroll-hidden {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.scroll-slideInUp.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduce motion para usuarios con preferencias de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animation,
+  .scroll-fadeInUp,
+  .scroll-fadeInLeft,
+  .scroll-fadeInRight,
+  .scroll-scaleIn,
+  .scroll-slideInUp {
+    animation: none !important;
+    transition: opacity 0.3s ease !important;
+  }
+  
+  .scroll-hidden {
+    opacity: 0;
+    transform: none !important;
+  }
+  
+  .scroll-visible {
+    opacity: 1;
+    transform: none !important;
+  }
+}
+
+/* === FOCUS STATES === */
+:focus-visible {
+  outline: var(--borderFocus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.btn:focus-visible {
+  outline: var(--borderFocus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(168, 71, 133, 0.4);
+  transform: translateY(-2px);
+}
+
+a:focus-visible {
+  outline: var(--borderFocus);
+  outline-offset: 4px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Mejor contraste para links en estado focus */
+a:focus {
+  color: var(--colorPrincipalHover);
+}
+
+/* Focus visible para navegación */
+nav ul li a:focus-visible {
+  outline: var(--borderFocus);
+  outline-offset: 4px;
+  background-color: rgba(168, 71, 133, 0.1);
+}
+
+/* Focus visible para tarjetas de servicios */
+.services li:focus-visible {
+  outline: var(--borderFocus);
+  outline-offset: 4px;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(168, 71, 133, 0.2);
 }
 
 /* !!! responsive !!! */

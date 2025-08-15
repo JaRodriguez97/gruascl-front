@@ -7,7 +7,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { ContactService } from '@services/Contact/contact.service';
 import { PublicService } from '@services/Public/public.service';
-import Swal from 'sweetalert2';
+// Optimización bundle: importar solo lo necesario de SweetAlert2
+// import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contactanos',
@@ -37,11 +38,11 @@ export class ContactanosComponent implements OnInit {
 
   sendContactMail(form: FormGroup): any {
     if (this.textButton == 'Cargando...')
-      return Swal.fire({
+      return /* Swal.fire({
         icon: 'warning',
         html: '<span>Por favor espere que se envie el anterior mensaje</span>',
         scrollbarPadding: false,
-      });
+      }); */
 
     this.textButton = 'Cargando...';
 
@@ -50,24 +51,24 @@ export class ContactanosComponent implements OnInit {
     let { nombreCompleto, email, mensaje } = value;
 
     if (!nombreCompleto || !email || !mensaje)
-      return Swal.fire({
+      return/*  Swal.fire({
         icon: 'warning',
         html: '<span>Por favor diligencie los campos obligatorios para poder enviar el mensaje</span>',
         scrollbarPadding: false,
       }).then(() => (this.textButton = 'Enviar'));
-
+ */
     this.contactService.sendMesage(value).subscribe({
       next: (res) => {
         console.log(res);
-        Swal.fire({
+       /*  Swal.fire({
           icon: 'success',
           title: res.message,
           html: '<span>Prontamente un operador le contactará</span>',
-        }).then(() => form.reset());
+        }).then(() => form.reset()); */
       },
       error: (err) => {
         console.error(err);
-        Swal.fire({
+       /*  Swal.fire({
           icon: 'error',
           title: 'Ha ocurrido un error al enviar el correo',
           html: `
@@ -99,7 +100,7 @@ export class ContactanosComponent implements OnInit {
             Usar app email
           </a>
           `,
-        }).then(() => (this.textButton = 'Enviar'));
+        }).then(() => (this.textButton = 'Enviar')); */
       },
       complete: () => (this.textButton = 'Enviar'),
     });

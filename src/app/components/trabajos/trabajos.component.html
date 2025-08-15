@@ -1,4 +1,4 @@
-<section class="adjust" *ngIf="publicService.trabajos">
+<section class="adjust">
   <div class="title">
     <h2>Trabajos de Gruas Cali - Portafolio</h2>
     <p>
@@ -11,6 +11,8 @@
       <div class="imgBx">
         <img
           [appLazyLoading]="setSrc(i)"
+          [appSkeletonLoader]="true"
+          skeletonType="image"
           [srcset]="setSrc(i) + ' 500w'"
           sizes="(max-width: 480px) 250px, (max-width: 768px) 500px, 1000px"
           [alt]="t.alt"

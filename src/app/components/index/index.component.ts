@@ -29,26 +29,22 @@ export class IndexComponent implements OnInit, AfterViewInit {
       icon: faFacebookF,
       href: 'https://www.facebook.com/share/oNzGDHMsg9DL1bfg/?mibextid=qi2Omg',
       title: 'Facebook - Grúas CL - Servicio Grúas',
-      target: '_blank'
     },
     {
       icon: faGoogle,
-      href: 'grua-cali#contacto',
+      href: 'https://share.google/fQfAOevf8WdL4AFba',
       title: 'Contacto - Grúas CL - Servicio Grúas',
-      target: null
     },
     {
       icon: faInstagram,
       href: 'https://instagram.com/gruascl247?utm_source=qr',
       title: 'Instagram - Grúas CL - Servicio Grúas',
-      target: '_blank'
     },
     {
       icon: faTiktok,
       href: 'https://vm.tiktok.com/ZMMY9RUkn/',
       title: 'Tik Tok - Grúas CL - Servicio Grúas',
-      target: '_blank'
-    }
+    },
   ];
 
   constructor(public publicService: PublicService) {}
@@ -81,7 +77,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
       (window as any).requestIdleCallback(idleCallback, { timeout: 2000 });
     } else {
       // Fallback para navegadores que no soportan requestIdleCallback
-      setTimeout(() => idleCallback({ timeRemaining: () => 50, didTimeout: true }), 1);
+      setTimeout(
+        () => idleCallback({ timeRemaining: () => 50, didTimeout: true }),
+        1
+      );
     }
   }
 
@@ -100,12 +99,5 @@ export class IndexComponent implements OnInit, AfterViewInit {
     //   error: (e) => console.error(e),
     // });
     gtag_report_conversion();
-  }
-
-  toogleMenu() {
-    this.publicService.servicios = true;
-    this.publicService.trabajos = true;
-    this.publicService.testimonios = true;
-    this.publicService.contactImg = true;
   }
 }
