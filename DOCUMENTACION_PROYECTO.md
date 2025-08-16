@@ -270,18 +270,21 @@ src/
 
 ### **FASE 5: UX/UI AVANZADA (Prioridad Alta) - 2-3 días**
 
-#### **5.1 Revisión y analisis**
-- [ ] Revisar toda la maquetación y estilos del proyecto
-- [ ] Analizar la mejor implementación de estilos y maquetación con semantica
-- [ ] Implementar maquetación adecuada en cada componente
-- [ ] Implementar estilos, tamaños de letras, etc adecuados en cada componente
+#### **5.1 Revisión y analisis** ✅ EN PROGRESO
+- [x] Revisar toda la maquetación y estilos del proyecto → Análisis completo realizado
+- [x] Analizar la mejor implementación de estilos y maquetación con semantica → Identificadas mejoras en estructura HTML
+- [x] Implementar maquetación adecuada en Index Component → Estructura semántica mejorada (section → aside para logo, mejor HTML semántico)
+- [x] Implementar maquetación adecuada en Servicios Component → Header semántico añadido, role="list" para accesibilidad
+- [ ] Continuar implementando mejoras en componentes restantes
 
 #### **5.2 Contenido adecuado**
 - [ ] Revisar toda la Información del proyecto, contenido
-- [ ] comparar el párrafo de index.component con el parrafo de nosotros.component son muy similares, tratar de variar y hacer sonar diferente, en nosotros priorizar las zonas de la ciudad y posibles destinos
+- [x] comparar el párrafo de index.component con el parrafo de nosotros.component son muy similares, tratar de variar y hacer sonar diferente, en nosotros priorizar las zonas de la ciudad y posibles destinos
 - [ ] implementar mejoras en textos y párrafos, titulos están muy bien
 - [ ] analizar mejoras visuales a implementar para el paso 5.3
-#### **5.3 Micro-interacciones**
+
+#### **5.3 Micro-interacciones y animaciones**
+- [ ] teniendo en cuenta la estructura actual del index.componente.html realiza cambios para visualizar el hero mas moderno, con animaciones sencillas pero llamativas, en base a esto, crea los siguientes puntos de paso 5.3
 
 
 ---

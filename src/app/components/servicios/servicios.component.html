@@ -1,13 +1,13 @@
 <section class="services adjust">
-  <div class="title">
+  <header>
     <h2>Servicio de Grua en Cali - Todos los Tipos</h2>
-    <p>
+    <p class="services-description">
       Dado que nuestra base está en Cali, ofrecemos servicios en la ciudad y
       traslados a nivel nacional, sin cobertura local en otros municipios.
     </p>
-  </div>
+  </header>
 
-  <ul>
+  <ul role="list">
     <li *ngFor="let s of servicios; let i = index">
       <img
         [appLazyLoading]="setSrc(i)"
