@@ -5,7 +5,6 @@ section {
   min-height: 100svh;
   padding: 100px;
   justify-content: space-between;
-  background: var(--backgroundColorPrincipal);
   display: flex;
 }
 
@@ -82,7 +81,6 @@ section main h1 {
 
 section main p {
   color: var(--letrasParrafosColor);
-  font-size: 1em;
   margin-bottom: 20px;
 }
 
@@ -127,6 +125,7 @@ footer p {
   color: var(--letrasPocoColor);
   letter-spacing: 1px;
   text-align: center;
+  margin: 0;
 }
 
 footer p a {
@@ -135,18 +134,83 @@ footer p a {
   text-decoration: none;
 }
 
+/* ///////////////////////////////////// */
+
+/* === HERO ANIMATIONS === */
+
+/* Imagen - aparece flotando */
+section .imgBx .cover {
+  opacity: 0;
+  transform: translateY(30px) scale(0.5);
+  animation: fadeFloat 0.9s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeFloat {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* H1 - entra desde la izquierda */
+section main h1 {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideInLeft 0.8s ease-out forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Párrafos - fade in hacia arriba con delay */
+section main p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botones - pequeño pop (scale in) */
+section main .btnBox {
+  opacity: 0;
+  transform: scale(0.6);
+  animation: popIn 0.6s ease-out forwards;
+  animation-delay: 0.9s;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* /////////////////////////////////// */
+
 /* responsive */
 
 @media (max-width: 991px) {
   section {
     flex-direction: column;
-    padding: 40px;
+    padding: 80px 40px 0px;
+    gap: 5vh;
   }
 
   section .imgBx {
     min-height: 30%;
     min-width: 50%;
-    margin-top: 50px;
   }
 
   section main {
@@ -168,9 +232,5 @@ footer p a {
     padding: 10px 0;
     flex-direction: column;
     gap: 5px;
-  }
-
-  section footer p {
-    font-size: 0.8em;
   }
 }

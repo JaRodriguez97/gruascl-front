@@ -27,7 +27,6 @@
   max-height: 100%;
   border-radius: 50%;
 }
-
 @media (max-width: 991px) {
   .nosotros .content {
     margin-top: 50px;
