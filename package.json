@@ -32,13 +32,11 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@nguniversal/express-engine": "^14.2.3",
     "@popperjs/core": "^2.11.6",
-    "animejs": "^3.2.2",
     "compression": "^1.8.1",
     "express": "^4.15.2",
     "express-validator": "^7.0.1",
     "process": "^0.11.10",
     "rxjs": "^7.8.0",
-    "sweetalert2": "^11.4.8",
     "tsconfig-paths": "^3.5.0",
     "tslib": "^2.4.0",
     "zone.js": "~0.11.8"

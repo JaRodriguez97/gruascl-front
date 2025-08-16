@@ -1,3 +1,7 @@
+.testimonials {
+  flex-direction: column;
+}
+
 .testimonials ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

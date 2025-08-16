@@ -213,6 +213,10 @@ section main .btnBox {
     min-width: 50%;
   }
 
+  section .imgBx .cover {
+    max-width: 250px;
+  }
+
   section main {
     margin-left: 0;
     max-width: 100%;

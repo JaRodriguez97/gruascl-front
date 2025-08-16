@@ -123,7 +123,13 @@
         "hoursAvailable": {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": [
-            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
           ],
           "opens": "00:00",
           "closes": "23:59"
@@ -177,29 +183,44 @@
     <!-- Preload imagen de fondo crítica para LCP -->
     <link rel="preload" as="image" href="./assets/images/bg.webp" />
     <!-- Preload logo principal -->
-    <link rel="preload" as="image" href="./assets/icons/logoGruasTransparente.webp" />
-    
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/icons/logoGruasTransparente.webp"
+    />
+
     <!-- === DNS PREFETCH OPTIMIZADO === -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//www.googletagmanager.com" />
     <link rel="dns-prefetch" href="//www.google-analytics.com" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-    
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+      crossorigin
+    />
+
     <!-- === ESTILOS CRÍTICOS INLINE PARA LCP === -->
     <style>
       /* Reset crítico */
-      * { box-sizing: border-box; }
-      body, html { margin: 0; padding: 0; min-height: 100vh; }
-      
+      * {
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+
       /* Layout crítico del índice - clases reales */
       .adjust {
         display: flex;
         width: 100%;
         min-height: 100vh;
-        padding: 100px;
+        padding: 80px 40px 0;
         justify-content: space-between;
       }
-      
+
       /* Container de imagen crítico */
       .imgBx {
         position: relative;
@@ -210,7 +231,7 @@
         justify-content: center;
         align-items: center;
       }
-      
+
       /* Logo crítico con dimensiones fijas para evitar CLS */
       .cover {
         width: 100%;
@@ -220,7 +241,7 @@
         border-radius: 50%;
         display: block;
       }
-      
+
       /* Contenido principal crítico */
       main {
         max-width: 700px;
@@ -228,7 +249,7 @@
         display: grid;
         gap: 20px;
       }
-      
+
       /* Título H1 crítico */
       main h1 {
         font-size: 3em;
@@ -236,7 +257,7 @@
         font-weight: bolder;
         letter-spacing: 1px;
       }
-      
+
       /* Responsive crítico */
       @media (max-width: 991px) {
         .adjust {
@@ -250,7 +271,7 @@
         }
       }
     </style>
-    
+
     <link
       rel="apple-touch-icon"
       type="image/x-icon"

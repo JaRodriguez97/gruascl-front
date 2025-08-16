@@ -1,3 +1,9 @@
+.nosotros {
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: 80px;
+}
+
 .nosotros .content {
   display: flex;
   justify-content: center;

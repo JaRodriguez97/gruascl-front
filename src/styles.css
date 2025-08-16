@@ -90,14 +90,9 @@ body {
 
 .adjust {
   position: relative;
-  min-height: 100vh;
   height: 100%;
-  width: 100%;
   max-width: 1440px;
-  padding: 0 40px;
-  padding-top: 80px;
   color: var(--letrasTitulosColor);
-  display: inline-block;
 }
 
 section {

@@ -1,6 +1,11 @@
+.trabajos {
+  flex-direction: column;
+}
+
 section ul {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  width: 100%;
   grid-gap: 20px;
   margin: 40px 0;
 }
@@ -61,7 +66,7 @@ section ul li .textBx span {
 section button {
   width: 50%;
   height: 40px;
-  left: 25%;
+  left: 0;
   right: 0;
 }
 
