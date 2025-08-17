@@ -1,29 +1,4 @@
-<header
-  *ngIf="publicService.imgIndex"
-  [ngClass]="{ sticky: publicService.sticky }"
->
-  <a routerLink="/" class="logo">Grúas CL</a>
-  <div
-    [ngClass]="{ active: publicService.menuToggle, toggle: true }"
-    (click)="toogleMenu()"
-  ></div>
-  <nav
-    [ngClass]="{ active: publicService.menu }"
-    aria-label="Navegación principal Gruas Cali"
-    role="navigation"
-  >
-    <ul class="menu">
-      <li *ngFor="let item of menuItems">
-        <a
-          [href]="'grua-cali#' + item.href"
-          (click)="toogleMenu()"
-          [attr.aria-label]="item.ariaLabel"
-          >{{ item.label }}</a
-        >
-      </li>
-    </ul>
-  </nav>
-</header>
+<app-header></app-header>
 
 <!-- BTN WhatsApp BTN -->
 <div
@@ -62,40 +37,40 @@
 <app-nosotros id="nosotros"></app-nosotros>
 
 <!-- Servicios con lazy loading optimizado -->
-<div 
-  id="servicios" 
-  appScrollAnimation="none" 
-  [enableLazySection]="true" 
+<div
+  id="servicios"
+  appScrollAnimation="none"
+  [enableLazySection]="true"
   sectionName="servicios"
 >
   <app-servicios *ngIf="publicService.servicios"></app-servicios>
 </div>
 
 <!-- Trabajos con lazy loading optimizado -->
-<div 
-  id="trabajos" 
-  appScrollAnimation="none" 
-  [enableLazySection]="true" 
+<div
+  id="trabajos"
+  appScrollAnimation="none"
+  [enableLazySection]="true"
   sectionName="trabajos"
 >
   <app-trabajos *ngIf="publicService.trabajos"></app-trabajos>
 </div>
 
 <!-- Testimonios con lazy loading optimizado -->
-<div 
-  id="testimonios" 
-  appScrollAnimation="none" 
-  [enableLazySection]="true" 
+<div
+  id="testimonios"
+  appScrollAnimation="none"
+  [enableLazySection]="true"
   sectionName="testimonios"
 >
   <app-testimonios *ngIf="publicService.testimonios"></app-testimonios>
 </div>
 
 <!-- Contacto con lazy loading optimizado -->
-<div 
-  id="contacto" 
-  appScrollAnimation="none" 
-  [enableLazySection]="true" 
+<div
+  id="contacto"
+  appScrollAnimation="none"
+  [enableLazySection]="true"
   sectionName="contactImg"
 >
   <app-contactanos *ngIf="publicService.contactImg"></app-contactanos>

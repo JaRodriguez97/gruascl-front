@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PublicService } from '@services/Public/public.service';
+import { environment } from '@env/environment';
 
 @Component({
   selector: 'app-nosotros',
@@ -7,6 +8,8 @@ import { PublicService } from '@services/Public/public.service';
   styleUrls: ['./nosotros.component.css'],
 })
 export class NosotrosComponent {
+  urlBaseImg = environment.urlBaseImg;
+
   constructor(public publicService: PublicService) {}
 
   onLogoLoad() {

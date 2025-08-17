@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "c": "ng g c components/favorites --skip-import",
+    "c": "ng g c components/header --skip-import",
     "m": "ng g m components/trabajos/trabajos-details/trabajos-details -m=app --route trabajos-details/:id --flat",
     "dev": "ng serve -o",
     "start": "ng serve",

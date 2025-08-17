@@ -1,0 +1,26 @@
+<header
+  *ngIf="publicService.imgIndex"
+  [ngClass]="{ sticky: publicService.sticky }"
+>
+  <a routerLink="/" class="logo">Grúas CL</a>
+  <div
+    [ngClass]="{ active: publicService.menuToggle, toggle: true }"
+    (click)="toogleMenu()"
+  ></div>
+  <nav
+    [ngClass]="{ active: publicService.menu }"
+    aria-label="Navegación principal Gruas Cali"
+    role="navigation"
+  >
+    <ul class="menu">
+      <li *ngFor="let item of menuItems">
+        <a
+          [href]="'grua-cali#' + item.href"
+          (click)="toogleMenu()"
+          [attr.aria-label]="item.ariaLabel"
+          >{{ item.label }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -11,7 +11,8 @@
       "@interfaces/*": ["src/app/interfaces/*"],
       "@models/*": ["src/app/models/*"],
       "@modules/*": ["src/app/modules/*"],
-      "@services/*": ["src/app/services/*"]
+      "@services/*": ["src/app/services/*"],
+      "@directives/*": ["src/app/directives/*"],
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

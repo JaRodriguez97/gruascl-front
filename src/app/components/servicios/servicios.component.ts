@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PublicService } from '@services/Public/public.service';
+import { environment } from '@env/environment';
 
 @Component({
   selector: 'app-servicios',
@@ -7,6 +8,7 @@ import { PublicService } from '@services/Public/public.service';
   styleUrls: ['./servicios.component.css'],
 })
 export class ServiciosComponent {
+  urlBaseImg = environment.urlBaseImg;
   servicios: {
     alt: string;
     title: string;
@@ -14,11 +16,11 @@ export class ServiciosComponent {
     parrafo: string;
   }[] = [
     {
-      alt: 'Grua para carros Cali - Servicio de grua economico vehiculos livianos',
-      title: 'Gruas Cali vehiculos livianos - Servicio grua economico',
-      titulo: 'Grua para Carros - Vehículos Livianos',
+      alt: 'Grua para carga Cali - Servicio de grua economico para livianos',
+      title: 'Gruas Cali para livianos - Servicio grua economico',
+      titulo: 'Grua para carga - Vehículos Livianos',
       parrafo:
-        'Nuestro <strong>servicio de grua para carros</strong> en Cali incluye vehículos livianos con <strong>grua economica</strong> disponible 24 horas. Atención rápida y precios competitivos.',
+        'Nuestro <strong>servicio de grua para carga</strong> en Cali incluye para livianos con <strong>grua economica</strong> disponible 24 horas. Atención rápida y precios competitivos.',
     },
     {
       alt: 'Grua 24 horas Cali vehiculos medianos - Servicio de grua cerca',
@@ -63,6 +65,6 @@ export class ServiciosComponent {
   constructor(public publicService: PublicService) {}
 
   setSrc(i: number) {
-    return `https://gruascl.com/assets/servicioImg/servicio0${i + 1}.webp`;
+    return `${this.urlBaseImg}servicioImg/servicio0${i + 1}.webp`;
   }
 }
